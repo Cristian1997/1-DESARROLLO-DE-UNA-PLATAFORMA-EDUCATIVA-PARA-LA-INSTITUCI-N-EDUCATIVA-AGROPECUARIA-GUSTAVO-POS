@@ -1,0 +1,2 @@
+# 1-DESARROLLO-DE-UNA-PLATAFORMA-EDUCATIVA-PARA-LA-INSTITUCI-N-EDUCATIVA-AGROPECUARIA-GUSTAVO-POS
+Desarrollo de una plataforma educativa web para la Institución Educativa Agropecuaria Gustavo Posada de Istmina. EducaNet facilita el acceso a la educación en entornos digitales, promoviendo la equidad en comunidades con recursos limitados. Desarrollado con JavaScript, PHP, HTML, CSS, MySQL y AJAX usando la metodología Kanban.

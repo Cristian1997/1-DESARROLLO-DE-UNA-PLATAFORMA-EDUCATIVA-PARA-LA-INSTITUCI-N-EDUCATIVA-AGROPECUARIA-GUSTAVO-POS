@@ -51,7 +51,6 @@
         <div class="form-group">
         
        
-  <!-- Tu contenido actual -->
   <!-- /.foros -->
 
   <div class="col-lg-4" hidden>
@@ -115,7 +114,6 @@
 
 
  <!-- foro -->
-<!-- Agrega este div para el mensaje inicial -->
 
  
  <input type="hidde"  id="txtidgrupo" hidden>

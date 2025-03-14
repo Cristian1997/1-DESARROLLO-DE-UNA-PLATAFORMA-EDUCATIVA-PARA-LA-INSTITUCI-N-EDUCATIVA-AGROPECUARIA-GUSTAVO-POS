@@ -46,21 +46,17 @@ function listar_comentarios_estudiantes() {
       "select": true
     });
   
-    // Ocultar el filtro de búsqueda
     document.getElementById("tabla_comentarios_estudiantes_filter").style.display = "none";
   
-    // Función para filtrar globalmente
     $('input.global_filter').on('keyup click', function () {
       tabla_comentarios_estudiantes.search($(this).val()).draw();
     });
   
-    // Función para filtrar por columna
     $('input.column_filter').on('keyup click', function () {
       var columnIndex = $(this).parents('tr').attr('data-column');
       tabla_comentarios_estudiantes.column(columnIndex).search($(this).val()).draw();
     });
   
-    // Personalizar el número de fila
     tabla_comentarios_estudiantes.on('order.dt search.dt', function () {
       tabla_comentarios_estudiantes.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
         cell.innerHTML = i + 1;
@@ -81,7 +77,6 @@ function listar_comentarios_estudiantes() {
     $("#txt_id_comentario").val(data.ID).hide();
     $("#txt_titulo_editar2").val(data.titulo);
 
-   // Verificar si data.respuesta está vacío o no
    var respuesta = data.respuesta ? data.respuesta : "NO RESPONDIDO";
    $("#lbl_ver").html(data.comentario);
    $("#lbl_resp").html(respuesta);
@@ -89,11 +84,10 @@ function listar_comentarios_estudiantes() {
   $("#lbl_docente_es").html(data.docente);
   $("#lbl_titulo").html(data.asunto);
 
-// Asignar la ruta de la imagen al atributo src del elemento img
-var rutaImagen = "../" + data.fotoestudiante; // Aquí asumo que el campo se llama "dotoestudiante"
+var rutaImagen = "../" + data.fotoestudiante; 
 $("#imagenestudiante").attr("src", rutaImagen);
 
-var rutaImagen = "../" + data.fotodocente; // Aquí asumo que el campo se llama "dotoestudiante"
+var rutaImagen = "../" + data.fotodocente; 
 $("#imagendocente").attr("src", rutaImagen);
 
 });
@@ -112,7 +106,7 @@ $('#tabla_comentarios_estudiantes').on('click', '.comentario_nuevo', function() 
     if (tabla_comentarios_estudiantes.row(this).child.isShown()) {
         var data = tabla_comentarios_estudiantes.row(this).data();
     }
-    comentario_nuevo(); // Llamar a la función comentario_nuevo() aquí
+    comentario_nuevo(); 
 });
 //---------------registros----------------------------
 
@@ -306,21 +300,17 @@ function listar_comentarios_docentes() {
       "select": true
     });
   
-    // Ocultar el filtro de búsqueda
     document.getElementById("tabla_comentarios_estudiantes_filter").style.display = "none";
   
-    // Función para filtrar globalmente
     $('input.global_filter').on('keyup click', function () {
       tabla_comentarios_estudiantes.search($(this).val()).draw();
     });
   
-    // Función para filtrar por columna
     $('input.column_filter').on('keyup click', function () {
       var columnIndex = $(this).parents('tr').attr('data-column');
       tabla_comentarios_estudiantes.column(columnIndex).search($(this).val()).draw();
     });
   
-    // Personalizar el número de fila
     tabla_comentarios_estudiantes.on('order.dt search.dt', function () {
       tabla_comentarios_estudiantes.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
         cell.innerHTML = i + 1;
@@ -348,18 +338,16 @@ function listar_comentarios_docentes() {
     $("#txt_resp").val(data.respuesta);
     $("#lbl_ver").html(data.comentario);
     
-     // Verificar si data.respuesta está vacío o no
      var respuesta = data.respuesta ? data.respuesta : "NO RESPONDIDO";
      $("#lbl_resp").html(respuesta);
     $("#lbl_estudiante").html(data.estudiante);
     $("#lbl_docente").html(data.docente);
     $("#lbl_titulo").html(data.asunto);
 
- // Asignar la ruta de la imagen al atributo src del elemento img
- var rutaImagen = "../" + data.fotoestudiante; // Aquí asumo que el campo se llama "dotoestudiante"
+ var rutaImagen = "../" + data.fotoestudiante; 
  $("#imagenestudiante").attr("src", rutaImagen);
 
- var rutaImagen = "../" + data.fotodocente; // Aquí asumo que el campo se llama "dotoestudiante"
+ var rutaImagen = "../" + data.fotodocente; 
  $("#imagendocente").attr("src", rutaImagen);
   
 

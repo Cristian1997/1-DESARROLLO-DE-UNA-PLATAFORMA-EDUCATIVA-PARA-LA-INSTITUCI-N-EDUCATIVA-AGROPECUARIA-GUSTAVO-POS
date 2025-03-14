@@ -44,7 +44,18 @@ El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada
 
 ## Advertencia
 
-Dentro de la carpeta `Proyecto` se encuentra una subcarpeta llamada **"Plantilla"**, la cual contiene el dashboard de **AdminLTE**. Es posible que esta carpeta no contenga todos los elementos necesarios, ya que GitHub a veces limita la subida de archivos. Para solucionar esto, dentro de la raíz de la carpeta `Proyecto` se encuentra un archivo comprimado llamado **"Plantilla.rar"**, el cual contiene todos los archivos completos. Solo es necesario descomprimirlo para restaurar los archivos faltantes.  
+
+1. **Archivos faltantes de la plantilla:**  
+   Dentro de la carpeta `Proyecto` se encuentra una subcarpeta llamada **"Plantilla"**, la cual contiene el dashboard de **AdminLTE**. Es posible que esta carpeta no contenga todos los elementos necesarios, ya que GitHub a veces limita la subida de archivos. Para solucionar esto, dentro de la raíz de la carpeta `Proyecto` se encuentra un archivo comprimado llamado **"Plantilla.rar"**, el cual contiene todos los archivos completos. Solo es necesario descomprimirlo para restaurar los archivos faltantes.  
+
+2. **Librerías para generación de reportes:**  
+   Dentro de `Proyecto/controlador/calificaciones/` se encuentran archivos `.rar` con las librerías necesarias para la generación de reportes en Excel y PDF. Debido a las limitaciones de GitHub, algunos archivos no se suben correctamente, por lo que es necesario extraerlos manualmente:  
+   - **PhpSpreadsheet.rar**: Contiene **todos los archivos completos** de la librería **PhpSpreadsheet**, necesaria para generar reportes en **Excel**.  
+   - **mpdf.part1.rar** y **mpdf.part2.rar**: Contienen **todos los archivos completos** de la librería **mPDF**, necesaria para la generación de reportes en **PDF**.  
+
+   **Nota:** Para que las funcionalidades de generación de reportes funcionen correctamente, es imprescindible descomprimir estos archivos en sus respectivas ubicaciones.  
+
+ 
 
 ## Documentación
 

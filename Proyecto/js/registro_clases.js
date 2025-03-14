@@ -113,7 +113,6 @@ $("#modal_registro_videos").on('click', '.ver_registro_clases', function () {
         keyboard: false
     });
     $("#modal_registro_videos").modal('show');
-    // Llenar los elementos del modal con los datos de la fila
     $("#txttitulo").html(data.titulo);
     $("#txtdescripcion").html(data.detalles);
     $("#txtdocente").html(data.docente);
@@ -430,7 +429,6 @@ function Registrar_Clases() {
        
        xhr: function() {
            var xhr = new window.XMLHttpRequest();
-           // Escuchador para el progreso de la carga
            xhr.upload.addEventListener("progress", function(evt) {
                if (evt.lengthComputable) {
                    var percentComplete = (evt.loaded / evt.total) * 100;

@@ -62,4 +62,11 @@ El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada
 En la carpeta `Documentación` ubicada en la raíz del proyecto, se encuentran los siguientes archivos:  
 
 - **Documentación-EducaNet.pdf**: Contiene la descripción detallada del proyecto, sus objetivos y alcance.  
-- **Manual de usuario EducaNet.pdf**: Guía para el uso de la plataforma, explicando sus funciones y características principales.  
+- **Manual de usuario EducaNet.pdf**: Guía para el uso de la plataforma, explicando sus funciones y características principales.
+
+## Aviso de Uso
+
+Este proyecto fue desarrollado para la **Institución Educativa Agropecuaria Gustavo Posada** como trabajo de grado para optar por el título de **Ingeniería de Sistemas** en la **Fundación Universitaria Claretiana | Uniclaretiana**.  
+
+**Queda estrictamente prohibido su uso con fines comerciales.** Este software está destinado exclusivamente para fines educativos.  
+

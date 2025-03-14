@@ -1,0 +1,27 @@
+body {
+    background-image: url('./background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Lobster Two', cursive;
+}
+
+/* Estilos para tamaños de pantalla más pequeños, como máximo 768px */
+@media (max-width: 768px) {
+    body {
+        background-size: 320%; /* Para que la imagen cubra todo el fondo */
+        background-position: top; /* Para centrar la imagen */
+    }
+}
+
+
+
+  
+  /* Estilos para tamaños de pantalla más pequeños, como máximo 768px */
+  @media (max-width: 768px) {
+	.responsive-container {
+	  width: 100%;
+	  height: auto;
+	}
+  }
+
+  

@@ -433,7 +433,7 @@ function listar_combo_materia() {
         data: { id: id }
     }).done(function(resp) {
         let data = JSON.parse(resp);
-        console.log(data); // Verificar los datos recibidos
+        console.log(data); 
         var cadena = "";
         if (data.length > 0) {
             for (var i = 0; i < data.length; i++) {
@@ -464,7 +464,7 @@ function listar_combo_materia() {
         var docente = $("#cbm_grupo option:selected").data("docente");
         console.log("Selected docente:", docente); 
         $("#id_docente_verifity_es").val(docente);
-        console.log("Updated input value:", $("#id_docente_verifity_es").val()); // 
+        console.log("Updated input value:", $("#id_docente_verifity_es").val()); 
     });
 }
 
@@ -616,7 +616,7 @@ function base64ToArrayBuffer(base64) {
 function downloadPDF(pdfData, fileName) {
     var blob = new Blob([pdfData], { type: 'application/pdf' });
     if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-        // Para IE
+       
         window.navigator.msSaveOrOpenBlob(blob, fileName);
     } else {
         var url = window.URL.createObjectURL(blob);

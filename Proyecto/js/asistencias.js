@@ -91,7 +91,7 @@ $('#tabla_asistencias').on('click', '.editar', function () {
 
 })
 
-// En el evento ready del documento
+// evento ready del documento
 
 $(document).ready(function() {
   

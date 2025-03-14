@@ -107,7 +107,7 @@
                                         <div class="box-header with-border">
                                             <div class="container">
                                                 <div
-                                                    class="row justify-content-center"> <!-- Añade la clase row y justify-content-center para centrar en Bootstrap -->
+                                                    class="row justify-content-center"> 
                                                     <div class="col-lg-9">  <!-- Define el ancho del contenedor -->
                                                         <div id="videoContainer"></div>
                                                     </div>

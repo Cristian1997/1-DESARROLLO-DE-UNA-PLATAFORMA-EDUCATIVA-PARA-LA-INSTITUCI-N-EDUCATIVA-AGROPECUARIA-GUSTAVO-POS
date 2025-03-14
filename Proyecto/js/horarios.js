@@ -152,7 +152,7 @@ $('#tabla_horarios').on('click', '.editar', function () {
     $("#bloque_4_editar").val(data.bloque_4);
     $("#bloque_5_editar").val(data.bloque_5);
     $("#bloque_6_editar").val(data.bloque_6);
-  // Completar los IDs para los bloques de los días de la semana
+
 $("#cbm_lunes_1_editar").val(data.id_lunes_1).trigger("change");
 $("#cbm_lunes_2_editar").val(data.id_lunes_2).trigger("change");
 $("#cbm_lunes_3_editar").val(data.id_lunes_3).trigger("change");
@@ -211,7 +211,7 @@ $(document).ready(function() {
     $("#bloque_4_editar").val(data.bloque_4);
     $("#bloque_5_editar").val(data.bloque_5);
     $("#bloque_6_editar").val(data.bloque_6);
-  // Completar los IDs para los bloques de los días de la semana
+
   $("#cbm_lunes_1_editar").val(data.lunes_1).trigger("change");
   $("#cbm_lunes_2_editar").val(data.lunes_2).trigger("change");
   $("#cbm_lunes_3_editar").val(data.lunes_3).trigger("change");
@@ -311,23 +311,18 @@ $(document).ready(function() {
         if (data) {
             $("#txt_grado").html(data.docente);
             
-            // Iterar sobre los días de la semana y los bloques de horarios
             for (var dia = 0; dia < 5; dia++) {
                 for (var bloque = 1; bloque <= 6; bloque++) {
                     var campoID = "#txt_" + ["lunes", "martes", "miercoles", "jueves", "viernes"][dia] + "_" + bloque;
                     var celda = $(campoID);
                     var asignacion = data[["lunes", "martes", "miercoles", "jueves", "viernes"][dia] + "_" + bloque];
                     
-                    // Verificar si la asignación es "SIN ASIGNACIÓN"
                     if (asignacion === "SIN ASIGNACIÓN") {
-                        // Mostrar solo "SIN ASIGNACIÓN" en la celda
                         celda.text(asignacion);
                     } else {
-                        // Mostrar la asignación y el grado en la celda
                         celda.html(asignacion + "<br>Grado: " + data["grado_" + ["lunes", "martes", "miercoles", "jueves", "viernes"][dia] + "_" + bloque]);
                     }
 
-                    // Aplicar estilos según el contenido de la celda
                     if (asignacion === "SIN ASIGNACIÓN") {
                         celda.css("background-color", "#FFCCCC"); // Rojo claro
                     } else {
@@ -361,7 +356,6 @@ $(document).ready(function() {
     $("#txt_bloque_4").html(data.bloque_4);
     $("#txt_bloque_5").html(data.bloque_5);
     $("#txt_bloque_6").html(data.bloque_6);
-  // Completar los IDs para los bloques de los días de la semana
   $("#txt_lunes_1").html(data.lunes_1);
   $("#txt_lunes_2").html(data.lunes_2);
   $("#txt_lunes_3").html(data.lunes_3);
@@ -1174,13 +1168,11 @@ function Registrar_Horario() {
         }
     }).done(function (resp) {
         if (resp != "") {
-            // Comprobamos si la respuesta es -1, que indica que el grado ya está registrado
             if (resp == -1) {
                 Swal.fire("Mensaje De Advertencia", "El grado ya existe en la base de datos. Por favor, seleccione otro grado.", "warning");
                 return;
             }
     
-            // Comprobamos si la respuesta es 1, que indica que se registró correctamente
             if (resp == 1) {
                 Swal.fire("Mensaje De Confirmacion", "Datos correctamente, Nuevo Horario Registrado", "success")
                     .then((value) => {
@@ -1191,7 +1183,6 @@ function Registrar_Horario() {
             }
         }
         
-        // Si la respuesta no es -1 ni 1, mostramos mensaje de error
         Swal.fire("Mensaje De Error", "Lo sentimos, no se pudo completar el registro", "error");
     });
     
@@ -1305,7 +1296,6 @@ function Editar_Horario() {
     }).done(function (resp) {
         if (resp != "") {
     
-            // Comprobamos si la respuesta es 1, que indica que se registró correctamente
             if (resp == 1) {
                 Swal.fire("Mensaje De Confirmacion", "Datos correctamente, Horario Editado", "success")
                     .then((value) => {
@@ -1316,7 +1306,6 @@ function Editar_Horario() {
             }
         }
         
-        // Si la respuesta no es -1 ni 1, mostramos mensaje de error
         Swal.fire("Mensaje De Error", "Lo sentimos, no se pudo completar el registro", "error");
     });
     
@@ -1345,7 +1334,6 @@ function Horario_Estudiante() {
         $("#txt_bloque_5_estudiante").html(data.data[0].bloque_5);
         $("#txt_bloque_6_estudiante").html(data.data[0].bloque_6);
         
-        // Completar los IDs para los bloques de los días de la semana
         $("#txt_lunes_1_estudiante").html(data.data[0].lunes_1);
         $("#txt_lunes_2_estudiante").html(data.data[0].lunes_2);
         $("#txt_lunes_3_estudiante").html(data.data[0].lunes_3);
@@ -1566,13 +1554,11 @@ var grado_viernes_6 = $("#cbm_grado_viernes_6").val();
         }
     }).done(function (resp) {
         if (resp != "") {
-            // Comprobamos si la respuesta es -1, que indica que el grado ya está registrado
             if (resp == -1) {
                 Swal.fire("Mensaje De Advertencia", "El docente ya existe en la base de datos. Por favor, seleccione otro docente.", "warning");
                 return;
             }
     
-            // Comprobamos si la respuesta es 1, que indica que se registró correctamente
             if (resp == 1) {
                 Swal.fire("Mensaje De Confirmacion", "Datos correctamente, Nuevo Horario De Docente Registrado", "success")
                     .then((value) => {
@@ -1583,7 +1569,6 @@ var grado_viernes_6 = $("#cbm_grado_viernes_6").val();
             }
         }
         
-        // Si la respuesta no es -1 ni 1, mostramos mensaje de error
         Swal.fire("Mensaje De Error", "Lo sentimos, no se pudo completar el registro", "error");
     });
     
@@ -1683,12 +1668,10 @@ var grado_viernes_6 = $("#cbm_grado_editar_viernes_6").val();
 
 
 
-// Función para verificar si una variable es null, undefined o una cadena vacía
 function isEmpty(value) {
     return value === null || value === undefined || value.length === 0;
 }
 
-// Verificar todos los campos usando la función isEmpty
 if (
     isEmpty(grado_lunes_1) || isEmpty(grado_lunes_2) || isEmpty(grado_lunes_3) || isEmpty(grado_lunes_4) || isEmpty(grado_lunes_5) || isEmpty(grado_lunes_6) ||
     isEmpty(grado_martes_1) || isEmpty(grado_martes_2) || isEmpty(grado_martes_3) || isEmpty(grado_martes_4) || isEmpty(grado_martes_5) || isEmpty(grado_martes_6) ||
@@ -1706,7 +1689,6 @@ if (
     return;
 }
 
-// Si todos los campos tienen valores válidos, se continúa con el resto del código
 
 
     $.ajax({
@@ -1784,7 +1766,6 @@ if (
     }).done(function (resp) {
         if (resp != "") {
     
-            // Comprobamos si la respuesta es 1, que indica que se registró correctamente
             if (resp == 1) {
                 Swal.fire("Mensaje De Confirmacion", "Datos correctamente, Horario De Docente Editado", "success")
                     .then((value) => {
@@ -1795,7 +1776,6 @@ if (
             }
         }
         
-        // Si la respuesta no es -1 ni 1, mostramos mensaje de error
         Swal.fire("Mensaje De Error", "Lo sentimos, no se pudo completar el registro", "error");
     });
     
@@ -1824,7 +1804,6 @@ function Horario_Docente() {
             }
         }
 
-        // Llenar los bloques principales con el contenido y mantener los estilos
         $("#txt_docente").html(data.data[0].docente);
         $("#txt_bloque_1_docente").html(data.data[0].bloque_1);
         $("#txt_bloque_2_docente").html(data.data[0].bloque_2);
@@ -1833,23 +1812,18 @@ function Horario_Docente() {
         $("#txt_bloque_5_docente").html(data.data[0].bloque_5);
         $("#txt_bloque_6_docente").html(data.data[0].bloque_6);
 
-        // Iterar sobre los días de la semana y los bloques de horarios
         for (var dia = 0; dia < 5; dia++) {
             for (var bloque = 1; bloque <= 6; bloque++) {
                 var campoID = "#txt_" + ["lunes", "martes", "miercoles", "jueves", "viernes"][dia] + "_" + bloque + "_docente";
                 var celda = $(campoID);
                 var asignacion = data.data[0][["lunes", "martes", "miercoles", "jueves", "viernes"][dia] + "_" + bloque];
 
-                // Verificar si la asignación es "SIN ASIGNACIÓN"
                 if (asignacion === "SIN ASIGNACIÓN") {
-                    // Mostrar solo "SIN ASIGNACIÓN" en la celda
                     celda.text(asignacion);
                 } else {
-                    // Mostrar la asignación y el grado en la celda
                     celda.html(asignacion + "<br>Grado: " + data.data[0]["grado_" + ["lunes", "martes", "miercoles", "jueves", "viernes"][dia] + "_" + bloque]);
                 }
 
-                // Aplicar estilos según el contenido de la celda
                 aplicarEstilos(celda);
             }
         }

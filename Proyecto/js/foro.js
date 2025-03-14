@@ -715,7 +715,6 @@ $.ajax({
 
 // -----------modal respuestas-------------   
 // Función para cargar las respuestas
-// Función para cargar las respuestas del foro seleccionado
 function cargarRespuestas(id_foro, id_principal, id_docente_verifity) {
     var id_docente_verifity = $('#id_docente_verifity').val();
     $.ajax({
@@ -729,7 +728,6 @@ function cargarRespuestas(id_foro, id_principal, id_docente_verifity) {
             // Limpiar el contenedor de respuestas antes de cargar nuevas respuestas
             $('#respuestas_foro').empty();
 
-            // Parsear la respuesta JSON
             var respuestas = JSON.parse(respuesta);
 
             // Contador de respuestas
@@ -740,9 +738,7 @@ function cargarRespuestas(id_foro, id_principal, id_docente_verifity) {
 
             // Verificar si hay respuestas
             if (contadorRespuestas > 0) {
-                // Si hay respuestas, recorrerlas y mostrarlas
                 respuestas.forEach(function(respuesta) {
-                    // Construir el HTML de la respuesta con un margen inferior
                    
                     var botonEliminarRespuesta = '';
                     if (!$("#comentario_foro_area_respuesta").attr("hidden") && id_docente_verifity === respuesta.id_respuesta) {
@@ -782,7 +778,6 @@ function cargarRespuestas(id_foro, id_principal, id_docente_verifity) {
             }
         },
         error: function(xhr, status, error) {
-            // Manejar errores si es necesario
         }
     });
 }
@@ -807,33 +802,27 @@ $(document).on('click', '.responder_respuesta', function() {
     var responde_a = $(this).data('responde_a');
     var nombre = $(this).data('nombre');
 
-    // Mostrar el valor de responder_a en el input oculto id_responde_a
     $('#id_responde_a').val(responde_a);
 
-    // Mostrar el valor de nombre en el lbl_responder_a
     $('#lbl_responder_a').html('<b>' + nombre + '</b>');
 
     $('#modal_respuestas').animate({
         scrollTop: $('#txt_comentario_respuesta').offset().top - $('#modal_respuestas').offset().top
     }, 'slow');
-    // Aquí puedes abrir tu modal u otra acción que necesites realizar
 });
 
 $(document).on('click', '.responder_modal', function() {
     var responde_a = $(this).data('id-responde_a');
     var nombre = $(this).closest('.box').find('.username a').text();
 
-    // Mostrar el valor de responder_a en el input oculto id_responde_a
     $('#id_responde_a').val(responde_a);
 
-    // Mostrar el valor de nombre en el lbl_responder_a
     $('#lbl_responder_a').html('<b>' + nombre + '</b>');
     
     $('#modal_respuestas').animate({
         scrollTop: $('#txt_comentario_respuesta').offset().top - $('#modal_respuestas').offset().top
     }, 'slow');
 
-    // Aquí puedes abrir tu modal u otra acción que necesites realizar
 });
 
 
@@ -849,14 +838,13 @@ $(document).on('click', '.responder_comentario', function() {
 
     $('#id_principal').val(id_comentario_us);
     $('#id_foro_respuesta').val(id_foro);
-    $('#id_responde_a').val(id_responde_a); // Actualizar el valor de id_responde_a en el input oculto
+    $('#id_responde_a').val(id_responde_a); 
     $('#img_modal').attr('src', '../' + foto);
     $('#lbl_username').html('<a href="#">' + nombre + '</a>');
     $('#lbl_fecha').html(fecha);
     $('#lbl_comentario_principal').html(comentario);
     $('#lbl_responder_a').html('<b>' + nombre + '</b>');
 
-    // Actualizar el valor de data-id-responde_a en el botón "Responder" dentro del modal
     $('#btnResponderModal').data('id-responde_a', id_responde_a);
 
     $("#modal_respuestas").modal({
@@ -880,16 +868,14 @@ $(document).on('click', '.responder_comentario', function() {
     $('#btnregistarrespuesta').show();
     $('#btnEditarrespuesta').hide();
     $('#btnCancelarResponder').hide();
-    $("#txt_comentario_respuesta").val(""); // Limpiar el campo de comentario
+    $("#txt_comentario_respuesta").val(""); 
 });
     
-    // Agregar el evento click al botón "ver_foro" usando delegación de eventos
     $(document).on('click', '.ver_foro', function() {
         var rowData = tabla_foro.row($(this).closest('tr')).data();
         var id_foro = rowData.ID;
         var id_grupo = rowData.id_grupo;
-        var id_docente_verifity = $('#id_docente_verifity').val(); // Obtener el valor de id_docente_verifity
-        // Llamar a la función comentarios_foro con los datos del foro seleccionado y el ID del docente
+        var id_docente_verifity = $('#id_docente_verifity').val(); 
         comentarios_foro(id_foro, id_grupo, id_docente_verifity);
         $('#btnregistar').show();
         $('#btnEditar').hide();
@@ -909,60 +895,54 @@ $(document).ready(function() {
         $('#foro').show();
     }
 
-    // Esta función captura el título, la descripción, el id y el idGrupo del foro seleccionado
     function capturarDatosDelForo(rowData) {
         var titulo = rowData.titulo;
         var descripcion = rowData.descripcion;
-        var id = rowData.ID;  // Captura el valor de data-id
-        var idGrupo = rowData.id_grupo;  // Captura el valor de data-idgrupo
+        var id = rowData.ID;  
+        var idGrupo = rowData.id_grupo;  
         var nombre = rowData.nombre;
         var fecha = rowData.fecha_foro;
-        var fotoUsuario = "../" + rowData.foto;  // Ajusta la ruta de la foto del usuario
+        var fotoUsuario = "../" + rowData.foto;  
         var comentarios = rowData.comentarios;
-        var estadoForo = rowData.foro_estado;  // Captura el valor de foro_estado
+        var estadoForo = rowData.foro_estado;  
 
-        // Llama a la función para actualizar los elementos y el estado del foro
         actualizarInformacionDelForo(titulo, descripcion, id, idGrupo, nombre, fecha, fotoUsuario, comentarios, estadoForo);
     }
 
-    // Esta función actualiza los elementos HTML con la nueva información del foro
     function actualizarInformacionDelForo(titulo, descripcion, id, idGrupo, nombre, fecha, fotoUsuario, comentarios, estadoForo) {
         document.getElementById('txttitulo').innerHTML = titulo;
         document.getElementById('txtdescripcion').innerHTML = descripcion;
-        document.getElementById('txtdescripcion').style.whiteSpace = "pre-wrap"; // Agrega esta línea para respetar espacios y saltos de línea
-        document.getElementById('txtidforo').value = id;  // Actualiza el campo txtidforo con el valor de id
-        document.getElementById('txtidgrupo').value = idGrupo;  // Actualiza el campo txtidgrupo con el valor de idGrupo
-        document.getElementById('txtnombre').innerHTML = nombre;  // Actualiza el campo txtnombre con el valor de nombre
-        document.getElementById('txtfechaforo').innerHTML = fecha;  // Actualiza el campo txtfechaforo con el valor de fecha
-
-        // Actualiza la imagen del usuario
+        document.getElementById('txtdescripcion').style.whiteSpace = "pre-wrap"; 
+        document.getElementById('txtidforo').value = id;  
+        document.getElementById('txtidgrupo').value = idGrupo;  
+        document.getElementById('txtnombre').innerHTML = nombre; 
+        document.getElementById('txtfechaforo').innerHTML = fecha;  
         document.getElementById('imagenUsuario').src = fotoUsuario;
 
         // Verificar el estado del foro y mostrar/ocultar el área de comentario
         if (estadoForo === "INACTIVO") {
-            $("#comentario_foro_area").attr("hidden", true); // Ocultar el área de comentario
+            $("#comentario_foro_area").attr("hidden", true); 
         } else {
-            $("#comentario_foro_area").removeAttr("hidden"); // Mostrar el área de comentario
+            $("#comentario_foro_area").removeAttr("hidden"); 
         }
 
         if (estadoForo === "INACTIVO") {
-            $("#comentario_foro_area_respuesta").attr("hidden", true); // Ocultar el área de comentario
+            $("#comentario_foro_area_respuesta").attr("hidden", true); 
         } else {
-            $("#comentario_foro_area_respuesta").removeAttr("hidden"); // Mostrar el área de comentario
+            $("#comentario_foro_area_respuesta").removeAttr("hidden"); 
         }
 
 
-        // Función para mostrar u ocultar el botón al abrir o cerrar el modal
         $('#modal_respuestas').on('shown.bs.modal', function () {
             if (estadoForo === "INACTIVO") {
-                $("#btnResponderModal").hide(); // Ocultar el botón de responder
+                $("#btnResponderModal").hide();
             } else {
-                $("#btnResponderModal").show(); // Mostrar el botón de responder
+                $("#btnResponderModal").show(); 
             }
         });
     
         $('#modal_respuestas').on('hidden.bs.modal', function () {
-            $("#btnResponderModal").show(); // Mostrar el botón de responder al cerrar el modal
+            $("#btnResponderModal").show(); 
         });
        
     }
@@ -971,13 +951,9 @@ $(document).ready(function() {
 
 
 
-    // Agregar el evento click al botón "ver_foro" usando delegación de eventos
     $(document).on('click', '.ver_foro', function() {
-        // Obtiene la fila correspondiente en la tabla
         var rowData = tabla_foro.row($(this).closest('tr')).data();
-        
-        // Llama a la función para capturar y actualizar título, descripción, id, idGrupo, nombre, fecha, foto del usuario y estado del foro
-        capturarDatosDelForo(rowData);
+                capturarDatosDelForo(rowData);
         mostrarContenedorForo();
     });
 
@@ -986,7 +962,6 @@ $(document).ready(function() {
 
 
 
-    // Tu función titulo_descripcion
     function titulo_descripcion() {
         $.ajax({
             "url": "../controlador/foro/controlador_foro_listar.php",
@@ -1008,16 +983,7 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
 function eliminarComentario(id_comentario_us) {
-    // Ventana de confirmación
     Swal.fire({
         title: '¿Estás seguro?',
         text: "¿Quieres eliminar este comentario?",
@@ -1029,7 +995,6 @@ function eliminarComentario(id_comentario_us) {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value == true) {
-            // El usuario confirmó la eliminación
             $.ajax({
                 url: "../controlador/foro/controlador_eliminar_comentario_foro.php",
                 type: "POST",
@@ -1040,7 +1005,6 @@ function eliminarComentario(id_comentario_us) {
                 if (respuesta > 0) {
                     Swal.fire("Mensaje De Confirmación", "El comentario se eliminó con éxito", "success")
                         .then((value) => {
-                            // Llamar a la función para recargar los comentarios
                             recargarComentarios();
                         });
                 } else {
@@ -1057,7 +1021,6 @@ function eliminarRespuesta(id_comentario_us) {
     var id_foro = $("#id_foro_respuesta").val(); 
     var id_principal = $("#id_principal").val(); 
 
-    // Ventana de confirmación
     Swal.fire({
         title: '¿Estás seguro?',
         text: '¿Quieres eliminar esta respuesta?',
@@ -1069,7 +1032,6 @@ function eliminarRespuesta(id_comentario_us) {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.value) {
-            // El usuario confirmó la eliminación
             $.ajax({
                 url: "../controlador/foro/controlador_eliminar_comentario_foro_respuesta.php",
                 type: "POST",
@@ -1080,7 +1042,6 @@ function eliminarRespuesta(id_comentario_us) {
                 if (respuesta > 0) {
                     Swal.fire("Mensaje De Confirmación", "La respuesta se eliminó con éxito", "success")
                     .then((value) => {
-                        // Llamar a la función para recargar las respuestas
                         recargarRespuestas(id_foro, id_principal, id_docente_verifity);
                     });
                 } else {
@@ -1095,15 +1056,11 @@ function eliminarRespuesta(id_comentario_us) {
 
 
 
-
-
-
-// Función para recargar los comentarios
 // Función para recargar los comentarios y el contador
 function recargarComentarios() {
-    var id_foro = $('#txtidforo').val(); // Obtener el ID del foro actual
-    var id_grupo = $('#txtidgrupo').val(); // Obtener el ID del grupo actual
-    var id_docente_verifity = $('#id_docente_verifity').val(); // Obtener el ID del docente
+    var id_foro = $('#txtidforo').val(); 
+    var id_grupo = $('#txtidgrupo').val(); 
+    var id_docente_verifity = $('#id_docente_verifity').val(); 
 
     $.ajax({
         url: "../controlador/foro/controlador_foro_comentarios.php",
@@ -1119,7 +1076,6 @@ function recargarComentarios() {
 
         if (data.length > 0) {
             for (var i = 0; i < data.length; i++) {
-                // Verificar si el ID del docente coincide con el ID del comentario
                 var botonEliminar = '';
                 if (!$("#comentario_foro_area").attr("hidden") && id_docente_verifity === data[i].id_comentario) {
                     botonEliminar = '<button type="button" class="eliminar_comentario btn btn-default btn-xs pull-right" onclick="eliminarComentario(' + data[i].id_comentario_us + ')"><i class="fa fa-trash-o"></i> Eliminar comentario</button>';
@@ -1180,7 +1136,7 @@ function recargarComentarios() {
     });
 }
 
-// Función para recargar las respuestas en el modal
+
 // Función para recargar las respuestas en el modal
 function recargarRespuestas(id_foro, id_principal, id_docente_verifity) {
     
@@ -1193,23 +1149,16 @@ function recargarRespuestas(id_foro, id_principal, id_docente_verifity) {
             id_principal: id_principal
         },
         success: function(respuesta) {
-            // Limpiar el contenedor de respuestas antes de cargar nuevas respuestas
             $('#respuestas_foro').empty();
 
-            // Parsear la respuesta JSON
             var respuestas = JSON.parse(respuesta);
 
-            // Contador de respuestas
             var contadorRespuestas = respuestas.length;
 
-            // Mostrar el contador de respuestas
             $('#txt_contador_respuestas').text(contadorRespuestas);
 
-            // Verificar si hay respuestas
             if (contadorRespuestas > 0) {
-                // Si hay respuestas, recorrerlas y mostrarlas
                 respuestas.forEach(function(respuesta) {
-                    // Construir el HTML de la respuesta con un margen inferior
                     var botonEliminarRespuesta = '';
                    if (id_docente_verifity === respuesta.id_respuesta) {
                    botonEliminarRespuesta = '<button type="button" class="eliminar_respuesta btn btn-default btn-xs pull-right" onclick="eliminarRespuesta(' + respuesta.id_comentario_us + ')"><i class="fa fa-trash-o"></i> Eliminar respuesta</button>';
@@ -1375,17 +1324,14 @@ function listar_combo_verificar_estudiante(){
             }
             $("#cbm_gruposs").html(cadena);
 
-            // Al seleccionar un docente, actualizar el campo oculto id_docente_verifity_est con el valor en la posición 5 (índice 4)
             $("#cbm_gruposs").change(function() {
-                var docente = data[$(this).prop('selectedIndex')][5]; // Tomando el valor en la posición 5 (índice 4) del array data
+                var docente = data[$(this).prop('selectedIndex')][5]; 
                 $("#id_docente_verifity_est").val(docente);
             });
 
-            // Inicializar el campo de texto con el valor del primer docente
-            var primerDocente = data[0][5]; // Tomando el valor en la posición 5 (índice 4) del primer elemento de data
+            var primerDocente = data[0][5]; 
             $("#id_docente_verifity_est").val(primerDocente);
 
-            // Llamar a las funciones necesarias con el id
             id = $("#cbm_gruposs").val();
             listar_combo_grado(id);
             listar_combo_asignatura(id);
@@ -1396,7 +1342,7 @@ function listar_combo_verificar_estudiante(){
         } else {
             cadena += "<option value=''>NO SE ENCONTRARON REGISTROS</option>";
             $("#cbm_gruposs").html(cadena);
-            $("#id_docente_verifity_est").val(''); // Limpiar el campo de texto
+            $("#id_docente_verifity_est").val(''); 
         }
     });
 }

@@ -13,20 +13,20 @@ EducaNet es una plataforma educativa web diseñada para la Institución Educativ
 
 El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada de la siguiente manera:
 
-📂 Proyecto - Código fuente de la plataforma
-    📂 plantilla - Dashboard de AdminLTE
-    📂 modelo - Archivos relacionados con la base de datos y lógica de negocio
-    📂 vista - Archivos HTML y recursos visuales
-    📂 controlador - Archivos PHP encargados de la gestión de las vistas y la lógica de la aplicación
-    📂 js - Archivos JavaScript para la interacción y dinamismo de la plataforma
-    📂 login - Plantilla de inicio de sesión basada en Bootstrap
+📂 **Proyecto** - Código fuente de la plataforma  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **plantilla** - Dashboard de AdminLTE  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **modelo** - Archivos relacionados con la base de datos y lógica de negocio  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **vista** - Archivos HTML y recursos visuales  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **controlador** - Archivos PHP encargados de la gestión de las vistas y la lógica de la aplicación  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **js** - Archivos JavaScript para la interacción y dinamismo de la plataforma  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **login** - Plantilla de inicio de sesión basada en Bootstrap  
 
-📂 Documentación - Archivos PDF con información del proyecto
-    📄 Documentación-EducaNet.pdf - Informe detallado del proyecto
-    📄 Manual de usuario EducaNet.pdf - Guía de uso de la plataforma
+📂 **Documentación** - Archivos PDF con información del proyecto  
+&nbsp;&nbsp;&nbsp;&nbsp;📄 **Documentación-EducaNet.pdf** - Informe detallado del proyecto  
+&nbsp;&nbsp;&nbsp;&nbsp;📄 **Manual de usuario EducaNet.pdf** - Guía de uso de la plataforma  
 
-📂 Base de Datos - Scripts SQL para la configuración de la base de datos
-    📄 academia.sql - Script de creación de la base de datos
+📂 **Base de Datos** - Scripts SQL para la configuración de la base de datos  
+&nbsp;&nbsp;&nbsp;&nbsp;📄 **academia.sql** - Script de creación de la base de datos 
 
   ## Credenciales de Prueba
 

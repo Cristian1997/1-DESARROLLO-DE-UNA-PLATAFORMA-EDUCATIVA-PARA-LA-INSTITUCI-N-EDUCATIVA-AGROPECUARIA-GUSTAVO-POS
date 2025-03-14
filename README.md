@@ -42,7 +42,7 @@ El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada
   - Usuario: alumno  
   - Contraseña: 123456  
 
-## Advertencia
+## ⚠Advertencia⚠
 
 
 1. **Archivos faltantes de la plantilla:**  

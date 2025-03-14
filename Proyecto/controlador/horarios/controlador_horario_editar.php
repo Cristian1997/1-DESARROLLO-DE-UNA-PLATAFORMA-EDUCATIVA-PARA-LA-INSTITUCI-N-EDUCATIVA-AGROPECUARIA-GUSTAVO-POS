@@ -1,0 +1,57 @@
+<?php
+require '../../modelo/modelo_horarios.php';
+
+$MH = new Modelo_Horarios();
+
+$id_horario = htmlspecialchars($_POST['id_horario'], ENT_QUOTES, 'UTF-8');
+$bloque_1 = htmlspecialchars($_POST['bloque_1'], ENT_QUOTES, 'UTF-8');
+$bloque_2 = htmlspecialchars($_POST['bloque_2'], ENT_QUOTES, 'UTF-8');
+$bloque_3 = htmlspecialchars($_POST['bloque_3'], ENT_QUOTES, 'UTF-8');
+$bloque_4 = htmlspecialchars($_POST['bloque_4'], ENT_QUOTES, 'UTF-8');
+$bloque_5 = htmlspecialchars($_POST['bloque_5'], ENT_QUOTES, 'UTF-8');
+$bloque_6 = htmlspecialchars($_POST['bloque_6'], ENT_QUOTES, 'UTF-8');
+
+$lunes_1 = htmlspecialchars($_POST['lunes_1'], ENT_QUOTES, 'UTF-8');
+$lunes_2 = htmlspecialchars($_POST['lunes_2'], ENT_QUOTES, 'UTF-8');
+$lunes_3 = htmlspecialchars($_POST['lunes_3'], ENT_QUOTES, 'UTF-8');
+$lunes_4 = htmlspecialchars($_POST['lunes_4'], ENT_QUOTES, 'UTF-8');
+$lunes_5 = htmlspecialchars($_POST['lunes_5'], ENT_QUOTES, 'UTF-8');
+$lunes_6 = htmlspecialchars($_POST['lunes_6'], ENT_QUOTES, 'UTF-8');
+
+$martes_1 = htmlspecialchars($_POST['martes_1'], ENT_QUOTES, 'UTF-8');
+$martes_2 = htmlspecialchars($_POST['martes_2'], ENT_QUOTES, 'UTF-8');
+$martes_3 = htmlspecialchars($_POST['martes_3'], ENT_QUOTES, 'UTF-8');
+$martes_4 = htmlspecialchars($_POST['martes_4'], ENT_QUOTES, 'UTF-8');
+$martes_5 = htmlspecialchars($_POST['martes_5'], ENT_QUOTES, 'UTF-8');
+$martes_6 = htmlspecialchars($_POST['martes_6'], ENT_QUOTES, 'UTF-8');
+
+$miercoles_1 = htmlspecialchars($_POST['miercoles_1'], ENT_QUOTES, 'UTF-8');
+$miercoles_2 = htmlspecialchars($_POST['miercoles_2'], ENT_QUOTES, 'UTF-8');
+$miercoles_3 = htmlspecialchars($_POST['miercoles_3'], ENT_QUOTES, 'UTF-8');
+$miercoles_4 = htmlspecialchars($_POST['miercoles_4'], ENT_QUOTES, 'UTF-8');
+$miercoles_5 = htmlspecialchars($_POST['miercoles_5'], ENT_QUOTES, 'UTF-8');
+$miercoles_6 = htmlspecialchars($_POST['miercoles_6'], ENT_QUOTES, 'UTF-8');
+
+$jueves_1 = htmlspecialchars($_POST['jueves_1'], ENT_QUOTES, 'UTF-8');
+$jueves_2 = htmlspecialchars($_POST['jueves_2'], ENT_QUOTES, 'UTF-8');
+$jueves_3 = htmlspecialchars($_POST['jueves_3'], ENT_QUOTES, 'UTF-8');
+$jueves_4 = htmlspecialchars($_POST['jueves_4'], ENT_QUOTES, 'UTF-8');
+$jueves_5 = htmlspecialchars($_POST['jueves_5'], ENT_QUOTES, 'UTF-8');
+$jueves_6 = htmlspecialchars($_POST['jueves_6'], ENT_QUOTES, 'UTF-8');
+
+$viernes_1 = htmlspecialchars($_POST['viernes_1'], ENT_QUOTES, 'UTF-8');
+$viernes_2 = htmlspecialchars($_POST['viernes_2'], ENT_QUOTES, 'UTF-8');
+$viernes_3 = htmlspecialchars($_POST['viernes_3'], ENT_QUOTES, 'UTF-8');
+$viernes_4 = htmlspecialchars($_POST['viernes_4'], ENT_QUOTES, 'UTF-8');
+$viernes_5 = htmlspecialchars($_POST['viernes_5'], ENT_QUOTES, 'UTF-8');
+$viernes_6 = htmlspecialchars($_POST['viernes_6'], ENT_QUOTES, 'UTF-8');
+
+$consulta = $MH->Editar_Horario($id_horario, $bloque_1, $bloque_2, $bloque_3, $bloque_4, $bloque_5, $bloque_6,
+    $lunes_1, $lunes_2, $lunes_3, $lunes_4, $lunes_5, $lunes_6,
+    $martes_1, $martes_2, $martes_3, $martes_4, $martes_5, $martes_6,
+    $miercoles_1, $miercoles_2, $miercoles_3, $miercoles_4, $miercoles_5, $miercoles_6,
+    $jueves_1, $jueves_2, $jueves_3, $jueves_4, $jueves_5, $jueves_6,
+    $viernes_1, $viernes_2, $viernes_3, $viernes_4, $viernes_5, $viernes_6);
+
+    echo $consulta;
+?>

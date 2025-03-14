@@ -294,7 +294,6 @@ $(document).ready(function(){
                       contador++;
                   }
 
-                  // Truncar el comentario si excede cierta longitud
                   var comentarioTruncado = comentario.Comentario.length > 45 ? comentario.Comentario.substring(0, 45) + '...' : comentario.Comentario;
                   var fechaFormateada = formatearFecha(comentario.Fecha);
 
@@ -351,28 +350,23 @@ $(document).ready(function(){
 
 
 function formatearFecha(fecha) {
-  // Convertir la cadena de fecha a objeto Date
   var fechaObjeto = new Date(fecha);
 
-  // Array de nombres de los meses completos
   var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
-  // Obtiene el día del mes, mes, año y hora
   var dia = fechaObjeto.getDate();
   var mes = meses[fechaObjeto.getMonth()];
-  var año = fechaObjeto.getFullYear(); // Obtener el año
+  var año = fechaObjeto.getFullYear(); 
   var hora = fechaObjeto.getHours();
   var minutos = fechaObjeto.getMinutes();
   var ampm = hora >= 12 ? 'pm' : 'am';
 
   // Convertir hora a formato de 12 horas
   hora = hora % 12;
-  hora = hora ? hora : 12; // Si es 0, lo convierte a 12
+  hora = hora ? hora : 12; 
 
-  // Agregar un cero inicial si los minutos son menores a 10
   minutos = minutos < 10 ? '0' + minutos : minutos;
 
-  // Construir la cadena de fecha formateada
   var fechaFormateada = dia + ' ' + mes + ' ' + año + ' ' + hora + ':' + minutos + ' ' + ampm;
 
   return fechaFormateada;
@@ -393,11 +387,10 @@ function TraerNotificacionesforoes() {
 
         let data = JSON.parse(resp);
         var contador = 0;
-        var listaHTML = ""; // Variable para almacenar el HTML de la lista
+        var listaHTML = ""; 
 
         if (data.length > 0) {
             for (var i = 0; i < data.length; i++) {
-                // Generar HTML del elemento de la lista y agregarlo a la variable listaHTML
                 listaHTML += generarElementoLista(data[i]);
 
                 if (data[i][1] == "ACTIVO") {
@@ -406,17 +399,14 @@ function TraerNotificacionesforoes() {
             }
             document.getElementById('lbl_contador_foro_n').innerHTML = contador;
             document.getElementById('lbl_contador_foro').innerHTML = "Tienes " + contador + " Foros Pendientes";
-            document.getElementById('div_cuerpo_foro').innerHTML = listaHTML; // Asignar el HTML al contenedor de la lista
+            document.getElementById('div_cuerpo_foro').innerHTML = listaHTML; 
         }
     });
 }
 
 function generarElementoLista(dataItem) {
-  // Definir la longitud máxima permitida para el título
   var maxLength = 25;
-  // Truncar el título si excede la longitud máxima
   var titulo = dataItem[0].length > maxLength ? dataItem[0].substring(0, maxLength) + "..." : dataItem[0];
-  // Generar el HTML del elemento de la lista
   return '<li>' +
       '<a href="#">' +
       '<div class="pull-left">' +
@@ -445,11 +435,10 @@ function TraerNotificacionesforodoc() {
 
         let data = JSON.parse(resp);
         var contador = 0;
-        var listaHTML = ""; // Variable para almacenar el HTML de la lista
+        var listaHTML = ""; 
 
         if (data.length > 0) {
             for (var i = 0; i < data.length; i++) {
-                // Generar HTML del elemento de la lista y agregarlo a la variable listaHTML
                 listaHTML += generarElementoListaDocente(data[i]);
 
                 if (data[i][1] == "ACTIVO") {
@@ -458,17 +447,14 @@ function TraerNotificacionesforodoc() {
             }
             document.getElementById('lbl_contador_foro_n_doc').innerHTML = contador;
             document.getElementById('lbl_contador_foro_doc').innerHTML = "Tienes " + contador + " Foros Pendientes";
-            document.getElementById('div_cuerpo_foro_doc').innerHTML = listaHTML; // Asignar el HTML al contenedor de la lista
+            document.getElementById('div_cuerpo_foro_doc').innerHTML = listaHTML; 
         }
     });
 }
 
 function generarElementoListaDocente(dataItem) {
-    // Definir la longitud máxima permitida para el título
     var maxLength = 25;
-    // Truncar el título si excede la longitud máxima
     var titulo = dataItem[0].length > maxLength ? dataItem[0].substring(0, maxLength) + "..." : dataItem[0];
-    // Generar el HTML del elemento de la lista
     return '<li>' +
         '<a href="#">' +
         '<div class="pull-left">' +

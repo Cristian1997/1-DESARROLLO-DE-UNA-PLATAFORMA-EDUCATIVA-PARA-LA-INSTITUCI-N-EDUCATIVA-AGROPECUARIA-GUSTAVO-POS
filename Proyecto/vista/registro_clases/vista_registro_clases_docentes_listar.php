@@ -102,7 +102,7 @@
   </div>
   <div class="box-header with-border">
     <div class="container">
-      <div class="row justify-content-center"> <!-- Añade la clase row y justify-content-center para centrar en Bootstrap -->
+      <div class="row justify-content-center"> 
         <div class="col-md-12"> <!-- Define el ancho del contenedor -->
           <img class="img-responsive pad" src="../vista/registro_clases/Horarios_page-0012.jpg" alt="Photo">
         </div>
@@ -123,7 +123,7 @@
 
 
 
-<!-- modar para editar usuarios -->
+<!-- modal para editar usuarios -->
 <form autocomplete="false" onsubmit="return false" id="modal1">
     <div class="modal fade" id="modal_registro" role="dialog">
         <div class="modal-dialog modal-md">

@@ -27,7 +27,7 @@ tabla_talleres = $("#tabla_talleres").DataTable({
    "columns": [
        { "defaultContent": "" },
        { "data": "titulo" },
-       {     "visible": false, // Aquí se oculta la columna del video
+       {     "visible": false, 
         "defaultContent": "<button style='font-size:13px; margin-right: 1px;' type='button' class='modal_descripcion btn btn-default' title='Descripcion' ><i class='fa fa-eye'></i></button>&nbsp;"
     },
     { "data": "nombre" },
@@ -504,13 +504,12 @@ function editar_fecha() {
     var id_taller = $("#id_talleres").val();
     var fecha = $("#fecha_editar").val();
  
-    // Convertir la fecha ingresada a un objeto de fecha en JavaScript
     var fechaSeleccionada = new Date(fecha);
 
     // Obtener la fecha actual
     var fechaActual = new Date();
     var dia = fechaActual.getDate();
-    var mes = fechaActual.getMonth() + 1; // Sumar 1 al mes porque en JavaScript los meses van de 0 a 11
+    var mes = fechaActual.getMonth() + 1;
     var año = fechaActual.getFullYear();
 
     // Formatear la fecha actual
@@ -900,7 +899,7 @@ function listar_combo_materia() {
         data: { id: id }
     }).done(function(resp) {
         let data = JSON.parse(resp);
-        console.log(data); // Verificar los datos recibidos
+        console.log(data); 
         var cadena = "";
         if (data.length > 0) {
             for (var i = 0; i < data.length; i++) {
@@ -909,12 +908,9 @@ function listar_combo_materia() {
             }
             $("#cbm_grupo").html(cadena);
 
-            // Inicializar el campo de texto con el valor del dato en la posición 4 (índice 4) de la primera opción
             var docente = $("#cbm_grupo option:selected").data("docente");
             $("#id_docente_verifity_es").val(docente);
-            console.log("Initial input value:", docente); // Verificar el valor inicial
-
-            // Llamar las funciones necesarias con el id
+            console.log("Initial input value:", docente); 
             id = $("#cbm_grupo").val();
             listar_combo_grado(id);
             listar_combo_asignatura(id);
@@ -929,7 +925,6 @@ function listar_combo_materia() {
         }
     });
 
-    // Añadir un evento change para actualizar el campo de texto al cambiar la selección
     $("#cbm_grupo").change(function() {
         var docente = $("#cbm_grupo option:selected").data("docente");
         console.log("Selected docente:", docente); // Verificar el valor seleccionado
@@ -1155,7 +1150,6 @@ $('#tabla_comentarios_estudiantes').on('click', '.comentar2', function() {
     $("#txt_id_comentario").val(data.ID).hide();
     $("#txt_titulo_editar2").val(data.titulo);
 
-   // Verificar si data.respuesta está vacío o no
    var respuesta = data.respuesta ? data.respuesta : "NO RESPONDIDO";
    $("#lbl_ver").html(data.comentarios);
    $("#lbl_resp").html(respuesta);
@@ -1163,11 +1157,10 @@ $('#tabla_comentarios_estudiantes').on('click', '.comentar2', function() {
   $("#lbl_docente_es").html(data.docentes);
   $("#lbl_titulo").html(data.titulo);
 
-// Asignar la ruta de la imagen al atributo src del elemento img
-var rutaImagen = "../" + data.fotoestudiante; // Aquí asumo que el campo se llama "dotoestudiante"
+var rutaImagen = "../" + data.fotoestudiante; 
 $("#imagenestudiante").attr("src", rutaImagen);
 
-var rutaImagen = "../" + data.fotodocente; // Aquí asumo que el campo se llama "dotoestudiante"
+var rutaImagen = "../" + data.fotodocente; 
 $("#imagendocente").attr("src", rutaImagen);
 
 });
@@ -1363,18 +1356,16 @@ $('#tabla_comentarios_docentes').on('click', '.responder', function() {
     $("#txt_resp").val(data.respuesta);
     $("#lbl_ver").html(data.comentarios);
     
-     // Verificar si data.respuesta está vacío o no
      var respuesta = data.respuesta ? data.respuesta : "NO RESPONDIDO";
      $("#lbl_resp").html(respuesta);
     $("#lbl_estudiante").html(data.alumnos);
     $("#lbl_docente").html(data.docente);
     $("#lbl_titulo").html(data.titulo);
 
- // Asignar la ruta de la imagen al atributo src del elemento img
- var rutaImagen = "../" + data.fotoestudiante; // Aquí asumo que el campo se llama "dotoestudiante"
+ var rutaImagen = "../" + data.fotoestudiante; 
  $("#imagenestudiante").attr("src", rutaImagen);
 
- var rutaImagen = "../" + data.fotodocente; // Aquí asumo que el campo se llama "dotoestudiante"
+ var rutaImagen = "../" + data.fotodocente; 
  $("#imagendocente").attr("src", rutaImagen);
   
 

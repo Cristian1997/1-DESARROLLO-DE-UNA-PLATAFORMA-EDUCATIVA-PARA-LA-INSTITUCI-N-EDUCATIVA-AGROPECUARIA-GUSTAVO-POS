@@ -136,7 +136,6 @@ function listar_combo_grupo(){
             listar_combo_grado(id);
             listar_combo_asignatura(id);
             
-            // Actualizar el valor del input oculto con el valor seleccionado por defecto
             $("#id_grupo").val(id);
             
             if (id.length != '') {
@@ -147,7 +146,6 @@ function listar_combo_grupo(){
             $("#cbm_grupo").html(cadena);
         }
 
-        // Agregar evento de cambio al combo
         $("#cbm_grupo").on("change", function() {
             var selectedValue = $(this).val();
             $("#id_grupo").val(selectedValue);
@@ -282,11 +280,10 @@ function TraerDatosContador1() {
       var data = JSON.parse(resp);
       var totalAsistencias = data[0].Total_No_Asistencias;
       if (totalAsistencias === "(N/A)") {
-        totalAsistencias = 0; // Si el valor es "(N/A)", establece el total de asistencias como 0
+        totalAsistencias = 0; 
       }
       document.getElementById('txtregistro1').innerHTML = totalAsistencias;
     }).fail(function () {
-      // En caso de error en la solicitud AJAX, también puedes establecer el valor como 0
       document.getElementById('txtregistro1').innerHTML = '0';
     });
   }

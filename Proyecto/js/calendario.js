@@ -55,18 +55,15 @@ function generarDias() {
     return (año % 4 === 0 && año % 100 !== 0) || (año % 400 === 0);
   }
   
-  // Llamar a las funciones iniciales
   generarDias();
   actualizarTitulo();
   
-  // Llamar a la función cada segundo para actualizar la fecha y hora
   setInterval(actualizarTitulo, 1000);
 
-  // Función para calcular los porcentajes basados en los periodos
   function calcularPorcentajes() {
     var ahora = new Date();
     var dia = ahora.getDate();
-    var mes = ahora.getMonth() + 1; // Se suma 1 porque los meses van de 0 a 11
+    var mes = ahora.getMonth() + 1; 
     var año = ahora.getFullYear();
   
     // Define los periodos, teniendo en cuenta las vacaciones
@@ -101,7 +98,6 @@ function generarDias() {
     var diasTranscurridos4 = Math.max(0, Math.min(diasEnPeriodo.periodo4, (ahora - inicioPeriodo4) / (1000 * 60 * 60 * 24)));
     var porcentaje4 = (diasTranscurridos4 / diasEnPeriodo.periodo4) * 100;
   
-    // Actualiza los elementos HTML con los porcentajes
     document.getElementById('periodo1').textContent = porcentaje1.toFixed(2) + '%';
     document.getElementById('barra1').style.width = porcentaje1 + '%';
   
@@ -115,6 +111,5 @@ function generarDias() {
     document.getElementById('barra4').style.width = porcentaje4 + '%';
   }
   
-  // Llama a la función para calcular los porcentajes
   calcularPorcentajes();
   

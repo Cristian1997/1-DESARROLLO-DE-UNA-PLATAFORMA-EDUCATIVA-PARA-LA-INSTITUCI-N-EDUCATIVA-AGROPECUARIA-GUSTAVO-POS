@@ -14,12 +14,12 @@ EducaNet es una plataforma educativa web diseñada para la Institución Educativ
 El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada de la siguiente manera:
 
 📂 **Proyecto** - Código fuente de la plataforma  
-&nbsp;&nbsp;&nbsp;&nbsp;📂 **plantilla** - Dashboard de AdminLTE  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **Plantilla** - Dashboard de AdminLTE  
 &nbsp;&nbsp;&nbsp;&nbsp;📂 **modelo** - Archivos relacionados con la base de datos y lógica de negocio  
 &nbsp;&nbsp;&nbsp;&nbsp;📂 **vista** - Archivos HTML y recursos visuales  
 &nbsp;&nbsp;&nbsp;&nbsp;📂 **controlador** - Archivos PHP encargados de la gestión de las vistas y la lógica de la aplicación  
 &nbsp;&nbsp;&nbsp;&nbsp;📂 **js** - Archivos JavaScript para la interacción y dinamismo de la plataforma  
-&nbsp;&nbsp;&nbsp;&nbsp;📂 **login** - Plantilla de inicio de sesión basada en Bootstrap  
+&nbsp;&nbsp;&nbsp;&nbsp;📂 **Login** - Plantilla de inicio de sesión basada en Bootstrap  
 
 📂 **Documentación** - Archivos PDF con información del proyecto  
 &nbsp;&nbsp;&nbsp;&nbsp;📄 **Documentación-EducaNet.pdf** - Informe detallado del proyecto  

@@ -275,18 +275,13 @@ function datos() {
 
     listar_grupos(id_grado, id_asignatura);
 
-    // Limpia el contenido actual antes de mostrar los nuevos datos
     $("#lista_grupos").empty();
 
-    // Variable para almacenar la cantidad total de estudiantes
     var totalEstudiantes = 0;
 
-    // Utilizamos la función drawCallback de DataTables para asegurar que la tabla se haya dibujado completamente
     tabla_Grupos.on('draw.dt', function() {
-        // Obtener los datos de la tabla después de que se haya dibujado completamente
         var data = tabla_Grupos.rows().data();
 
-        // Verificar si hay datos para mostrar
         if (data.length > 0) {
             var listaGruposHTML = '<div class="box-body no-padding"><ul class="users-list clearfix">';
 
@@ -298,19 +293,16 @@ function datos() {
                     '<span class="users-list-date">' + data[i].aula + '</span>' +
                     '</li>';
 
-                // Sumar 1 al total de estudiantes por cada iteración del bucle
                 totalEstudiantes++;
             }
 
             listaGruposHTML += '</ul></div>';
 
-            // Agrega la lista de grupos al contenedor con el id "lista_grupos"
             $("#lista_grupos").html(listaGruposHTML);
 
-            // Mostrar el total de estudiantes en el span con el id "txt_contador"
             $("#txt_contador").text(totalEstudiantes);
         }
-    }).draw(); // Asegura que la tabla se vuelva a dibujar para que se ejecute la función drawCallback
+    }).draw(); 
 }
 
 
@@ -427,18 +419,13 @@ function datos() {
 
         listar_grupo(id_grado, id_asignatura);
     
-        // Limpia el contenido actual antes de mostrar los nuevos datos
         $("#lista_grupos").empty();
     
-        // Variable para almacenar la cantidad total de estudiantes
         var totalEstudiantes = 0;
     
-        // Utilizamos la función drawCallback de DataTables para asegurar que la tabla se haya dibujado completamente
         tabla_Grupo.on('draw.dt', function() {
-            // Obtener los datos de la tabla después de que se haya dibujado completamente
             var data = tabla_Grupo.rows().data();
     
-            // Verificar si hay datos para mostrar
             if (data.length > 0) {
                 var listaGruposHTML = '<div class="box-body no-padding"><ul class="users-list clearfix">';
     
@@ -450,48 +437,22 @@ function datos() {
                         '<span class="users-list-date">' + data[i].aula + '</span>' +
                         '</li>';
     
-                    // Sumar 1 al total de estudiantes por cada iteración del bucle
                     totalEstudiantes++;
                 }
     
                 listaGruposHTML += '</ul></div>';
     
-                // Agrega la lista de grupos al contenedor con el id "lista_grupos"
                 $("#lista_grupos").html(listaGruposHTML);
     
-                // Mostrar el total de estudiantes en el span con el id "txt_contador"
                 $("#txt_contador").text(totalEstudiantes);
 
-                // Actualizar la foto del docente y el nombre del docente
-            var fotoDocente = "../" + data[0].FotoDocente; // Suponiendo que la foto del docente es la misma para todos los estudiantes
-            var nombreDocente = data[0].Docente; // Suponiendo que el nombre del docente es el mismo para todos los estudiantes
+            var fotoDocente = "../" + data[0].FotoDocente; 
+            var nombreDocente = data[0].Docente;
 
             $("#fotodocente").attr("src", fotoDocente);
             $("#lblnombre").text(nombreDocente);
 
                 
             }
-        }).draw(); // Asegura que la tabla se vuelva a dibujar para que se ejecute la función drawCallback
+        }).draw(); 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

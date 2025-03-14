@@ -68,5 +68,9 @@ En la carpeta `Documentación` ubicada en la raíz del proyecto, se encuentran l
 
 Este proyecto fue desarrollado para la **Institución Educativa Agropecuaria Gustavo Posada** como trabajo de grado para optar por el título de **Ingeniería de Sistemas** en la **Fundación Universitaria Claretiana | Uniclaretiana**.  
 
-**Queda estrictamente prohibido su uso con fines comerciales.** Este software está destinado exclusivamente para fines educativos.  
+- **Prohibición de Comercialización:** Queda estrictamente prohibida la venta, distribución o uso comercial de este software en cualquier forma.
+
+- **Uso Permitido:** Solo puede ser utilizado con fines educativos, investigación académica o mejora dentro de entornos de aprendizaje.  
+
+- **Limitación de Responsabilidad:** El autor no se hace responsable de cualquier daño o perjuicio derivado del uso de este software fuera de los propósitos académicos para los cuales fue desarrollado.  
 

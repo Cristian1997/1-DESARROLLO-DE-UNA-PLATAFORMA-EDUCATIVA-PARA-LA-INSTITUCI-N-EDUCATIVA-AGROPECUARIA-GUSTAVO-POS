@@ -442,12 +442,10 @@ function listar_combo_materia() {
             }
             $("#cbm_grupo").html(cadena);
 
-            // Inicializar el campo de texto con el valor del dato en la posición 4 (índice 4) de la primera opción
             var docente = $("#cbm_grupo option:selected").data("docente");
             $("#id_docente_verifity_es").val(docente);
-            console.log("Initial input value:", docente); // Verificar el valor inicial
+            console.log("Initial input value:", docente); 
 
-            // Llamar las funciones necesarias con el id
             id = $("#cbm_grupo").val();
             listar_combo_grado(id);
             listar_combo_asignatura(id);
@@ -458,16 +456,15 @@ function listar_combo_materia() {
         } else {
             cadena += "<option value=''>NO SE ENCONTRARON REGISTROS</option>";
             $("#cbm_grupo").html(cadena);
-            $("#id_docente_verifity_es").val(''); // Limpiar el campo de texto
+            $("#id_docente_verifity_es").val(''); 
         }
     });
 
-    // Añadir un evento change para actualizar el campo de texto al cambiar la selección
     $("#cbm_grupo").change(function() {
         var docente = $("#cbm_grupo option:selected").data("docente");
-        console.log("Selected docente:", docente); // Verificar el valor seleccionado
+        console.log("Selected docente:", docente); 
         $("#id_docente_verifity_es").val(docente);
-        console.log("Updated input value:", $("#id_docente_verifity_es").val()); // Verificar el valor actualizado
+        console.log("Updated input value:", $("#id_docente_verifity_es").val()); // 
     });
 }
 

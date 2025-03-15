@@ -4,13 +4,8 @@
 <link rel="stylesheet" href="../Plantilla/plugins/select2/select2.min.css">
 <div class="col-md-12">
     <div class="box box-warning box-solid">
-
-
-
         <div class="box-header with-border">
-
             <h3 class="box-title">ASISTENCIAS</h3>
-
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -19,66 +14,54 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-
             <div class="form-group">
-
                 <div class="col-lg-4" hidden>
-
                     <label for="">Asignatura</label>
                     <select class="js-example-basic-single" name="state" id="cbm_asignatura" style="width:100%;">
-
                     </select>
                     <br>
                     <br>
-
                 </div>
+                
                 <div class="col-lg-4" hidden>
                     <label for="">Mis Grupos</label>
                     <select class="js-example-basic-single" name="state" id="cbm_grado" style="width:100%;">
-
                     </select>
                     <br>
                     <br>
-
                 </div>
 
                 <div class="col-lg-4">
                     <label for="">Mis Grupos</label>
                     <select class="js-example-basic-single" name="state" id="cbm_grupo" style="width:100%;">
-
                     </select>
                     <br>
                     <br>
-
                 </div>
-
 
                 <div class="col-lg-2">
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-primary" style="width:100%" onclick="datos()"><i class="fa fa-search"></i>Listar</button>
-
                 </div>
+                
                 <div class="col-lg-2">
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-success" style="width:100%" onclick="cargar_contenido('contenido_principal','asistencias/vista_talleres_listar.php')"><i class="fa fa-check-square-o"></i>&nbsp;Detalles de Asistecias</button>
                 </div>
+                
                 <div class="col-lg-2">
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-danger" style="width:100%" onclick="limpiar_asistencias()"><i class="fa fa-file-o"></i>&nbsp;Limpiar Asistencias</button>
-
                 </div>
+                
                 <div class="col-lg-2">
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-primary" style="width:100%" onclick="guardar_asistencias()"><i class="fa fa-save"></i>&nbsp;Guardar Asistencias</button>
-
                 </div>
-
-
-
             </div>
             <br>
             <br>
@@ -112,8 +95,6 @@
         <!-- /.box -->
     </div>
 </div>
-
-
 
 <form autocomplete="false" onsubmit="return false" id="modal1">
     <div class="modal fade" id="modal_editar" role="dialog">
@@ -168,8 +149,6 @@
         </div>
     </div>
 </form>
-
-
 
 <script src="../Plantilla/plugins/select2/select2.min.js"></script>
 <script>

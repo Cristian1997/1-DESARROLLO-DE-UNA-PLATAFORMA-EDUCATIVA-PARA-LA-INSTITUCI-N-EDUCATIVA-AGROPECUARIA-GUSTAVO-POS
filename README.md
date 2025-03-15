@@ -1,8 +1,8 @@
-# Desarrollo de una Plataforma Educativa para la Institución Educativa Agropecuaria Gustavo Posada
+# 📚Desarrollo de una Plataforma Educativa para la Institución Educativa Agropecuaria Gustavo Posada📚
 
 EducaNet es una plataforma educativa web diseñada para la Institución Educativa Agropecuaria Gustavo Posada de Istmina. Su objetivo es facilitar el acceso a la educación en entornos digitales, promoviendo la equidad en comunidades con recursos limitados.
 
-## Tecnologías utilizadas
+## 🛠Tecnologías utilizadas🛠
 
 **Arquitectura:** Modelo-Vista-Controlador (MVC)  
 **Frontend:** HTML, CSS, JavaScript, AJAX  
@@ -28,7 +28,7 @@ El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada
 📂 **Base de Datos** - Scripts SQL para la configuración de la base de datos  
 &nbsp;&nbsp;&nbsp;&nbsp;📄 **academia.sql** - Script de creación de la base de datos 
 
-  ## Credenciales de Prueba
+  ## 🔑Credenciales de Prueba🔑
 
 - **Administrador**  
   - Usuario: admin  
@@ -57,20 +57,20 @@ El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada
 
  
 
-## Documentación
+##📖 Documentación📖
 
 En la carpeta `Documentación` ubicada en la raíz del proyecto, se encuentran los siguientes archivos:  
 
 - **Documentación-EducaNet.pdf**: Contiene la descripción detallada del proyecto, sus objetivos y alcance.  
 - **Manual de usuario EducaNet.pdf**: Guía para el uso de la plataforma, explicando sus funciones y características principales.
 
-## Aviso de Uso
+## ⚖Aviso de Uso⚖
 
 Este proyecto fue desarrollado para la **Institución Educativa Agropecuaria Gustavo Posada** como trabajo de grado para optar por el título de **Ingeniería de Sistemas** en la **Fundación Universitaria Claretiana | Uniclaretiana**.  
 
-- **Prohibición de Comercialización:** Queda estrictamente prohibida la venta, distribución o uso comercial de este software en cualquier forma.
+- **🚫Prohibición de Comercialización:** Queda estrictamente prohibida la venta, distribución o uso comercial de este software en cualquier forma.
 
-- **Uso Permitido:** Solo puede ser utilizado con fines educativos, investigación académica o mejora dentro de entornos de aprendizaje.  
+- **✅Uso Permitido:** Solo puede ser utilizado con fines educativos, investigación académica o mejora dentro de entornos de aprendizaje.  
 
-- **Limitación de Responsabilidad:** El autor no se hace responsable de cualquier daño o perjuicio derivado del uso de este software fuera de los propósitos académicos para los cuales fue desarrollado.  
+- **⚠Limitación de Responsabilidad:** El autor no se hace responsable de cualquier daño o perjuicio derivado del uso de este software fuera de los propósitos académicos para los cuales fue desarrollado.  
 

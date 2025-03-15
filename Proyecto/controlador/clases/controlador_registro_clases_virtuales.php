@@ -7,4 +7,4 @@ $id_docente = htmlspecialchars($_POST['id_docente'],ENT_QUOTES,'UTF-8');
 $link = htmlspecialchars($_POST['link'],ENT_QUOTES,'UTF-8');
 $consulta = $MC->Registrar_Clases_virtuales($fecha,$id_grupo,$id_docente,$link);
 echo $consulta;
- ?>
+?>

@@ -11,3 +11,4 @@ $ruta = htmlspecialchars($_POST['url'],ENT_QUOTES,'UTF-8');
 
 $consulta = $MC->Editar_Clases($id_clases,$id_docente,$titulo,$descripcion,$id_grupo,$ruta);
 echo $consulta;
+?>

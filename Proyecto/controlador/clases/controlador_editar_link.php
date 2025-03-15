@@ -5,4 +5,4 @@ $MC = new Modelo_Clases();
  
 $consulta = $MC->Editar_estado_link();
 echo $consulta;
-
+?>

@@ -7,3 +7,4 @@ $comentario = htmlspecialchars($_POST['comentario'],ENT_QUOTES,'UTF-8');
 $consulta = $MT->registrar_nota($id_taller,$comentario);
 
 echo $consulta;
+?>

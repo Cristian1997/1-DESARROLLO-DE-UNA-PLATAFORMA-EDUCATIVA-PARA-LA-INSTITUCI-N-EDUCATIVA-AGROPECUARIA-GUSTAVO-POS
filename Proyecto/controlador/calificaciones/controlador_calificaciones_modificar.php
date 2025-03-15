@@ -1,6 +1,7 @@
 <?php
     require '../../modelo/modelo_calificaciones.php';
     $MD = new Modelo_Calificaciones();
+
     $id_calificaciones = htmlspecialchars($_POST['id_calificaciones'],ENT_QUOTES,'UTF-8');
     $nota_1 = htmlspecialchars($_POST['nota_1'],ENT_QUOTES,'UTF-8');
     $nota_2 = htmlspecialchars($_POST['nota_2'],ENT_QUOTES,'UTF-8');

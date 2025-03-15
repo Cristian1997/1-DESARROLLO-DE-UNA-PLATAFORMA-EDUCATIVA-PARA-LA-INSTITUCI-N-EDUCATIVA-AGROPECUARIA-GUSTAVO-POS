@@ -9,7 +9,7 @@ EducaNet es una plataforma educativa web diseñada para la Institución Educativ
 **Backend:** PHP, MySQL  
 **Metodología:** Kanban  
 
-## Estructura del Proyecto
+## 📂Estructura del Proyecto📂
 
 El proyecto sigue la arquitectura **Modelo-Vista-Controlador (MVC)**, organizada de la siguiente manera:
 

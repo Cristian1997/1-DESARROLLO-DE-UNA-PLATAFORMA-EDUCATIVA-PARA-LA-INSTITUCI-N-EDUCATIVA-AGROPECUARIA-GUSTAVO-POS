@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <title>archivos</title>
-    <!-- Agregamos la librería de Bootstrap para los modales -->
 </head>
 <body>
     <!-- Botón para abrir el modal -->
@@ -55,7 +54,7 @@
 
                               
                        
-                            <!-- Agrega más opciones según sea necesario -->
+                            <!-- Agregar más opciones según sea necesario -->
                                 
                         </select>
                         <br>

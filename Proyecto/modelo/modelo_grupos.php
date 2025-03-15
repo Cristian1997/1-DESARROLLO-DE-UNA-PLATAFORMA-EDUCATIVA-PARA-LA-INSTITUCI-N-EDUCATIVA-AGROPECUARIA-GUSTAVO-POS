@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Grupos{
@@ -22,7 +21,6 @@ class Modelo_Grupos{
 		}
 	}
 
-	
 	function listar_combo_asignatura($id,$id_grupo){
 		$sql = "call SP_LISTAR_COMBO_GRUPO('$id','$id_grupo')";
 		$arreglo = array();
@@ -47,6 +45,5 @@ class Modelo_Grupos{
 			$this->conexion->cerrar();
 		}
 	}
-
-
 }
+?>

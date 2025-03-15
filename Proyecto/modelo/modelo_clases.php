@@ -32,6 +32,7 @@
       }
       
     } 
+
      function listar_videoconferencia_de_clases($id_grupo,$idusuario){
       $sql ="CALL SP_LISTAR_VIDEOCONFERENCIAS('$id_grupo', '$idusuario')";
       $arreglo = array();
@@ -57,6 +58,7 @@
       }
       
     }
+
     function Registrar_Clases_virtuales($fecha,$id_grupo,$id_docente,$link){
       $sql = "call SP_REGISTRAR_ASIGNACION_CLASES('$id_docente','$id_grupo','$link','$fecha')";
       if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -67,6 +69,7 @@
       }
       
     } 
+
     function Registrar_Clases($fecha,$id_grupo,$id_docente,$titulo,$descripcion,$ruta){
       $sql = "call SP_REGISTRAR_CLASES('$fecha','$id_grupo','$id_docente','$titulo','$descripcion','$ruta')";
       if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -86,9 +89,7 @@
       }else{
         return 0;
       }
-
       } 
-
 
      function modificar_estado($id,$estado){
       $sql = "call SP_MODIFICAR_ESTADO('$id','$estado')";
@@ -106,16 +107,11 @@
     function Editar_estado_link(){
       $sql = "call SP_MODIFICAR_ESTADO_LINK()";
       if ($consulta = $this->conexion->conexion->query($sql)) {
-        return 1;
-        
+        return 1;  
       }else{
         return 0;
       }
-      
-      
-  
     }
-
 
     function Editar_Link($id_link,$linknuevo,$materia,$fecha){
       $sql = "call SP_EDITAR_LINK('$id_link','$linknuevo','$materia','$fecha')";
@@ -126,8 +122,6 @@
       }else{
         return 0;
       }
-
-
       } 
-
   }
+  ?>

@@ -20,9 +20,6 @@
         
       }
 
- 
-
-  
     function Registrar_Docente($nombre,$apellido,$documento,$telefono,$fecha,$usu,$contra,$email,$sexo){
       $sql = "call SP_REGISTRAR_DOCENTE('$nombre','$apellido','$documento','$telefono','$fecha','$usu','$contra','$email','$sexo')";
       if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -56,4 +53,4 @@ function TraerDatos($usuario){
 }
 }
 
-  
+?>

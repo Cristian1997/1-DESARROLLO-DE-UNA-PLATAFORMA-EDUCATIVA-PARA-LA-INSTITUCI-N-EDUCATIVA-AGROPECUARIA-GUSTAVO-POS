@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Calificaciones{
@@ -21,6 +20,7 @@ class Modelo_Calificaciones{
 			$this->conexion->cerrar();
 		}
 	}	
+
 	function listar_Notas($id_usuario_es,$id_grupo,$id_docente){
 		$sql = "call SP_LISTAR_NOTAS_ESTUDIANTES('$id_usuario_es','$id_grupo','$id_docente')";
 		$arreglo = array();
@@ -34,7 +34,6 @@ class Modelo_Calificaciones{
 		}
 	}
 
-	
 	function listar_notas_admin(){
         $sql = "call SP_LISTAR_NOTAS_ADMIN()";
         $arreglo = array();
@@ -48,7 +47,6 @@ class Modelo_Calificaciones{
         
       }
 
-
 	function listar_combo_grado($id,$id_grupo){
 		$sql = "call SP_LISTAR_COMBO_GRADOS('$id','$id_grupo')";
 		$arreglo = array();
@@ -60,6 +58,7 @@ class Modelo_Calificaciones{
 			$this->conexion->cerrar();
 		}
 	}	
+
 	function listar_combo_estudiante($id_grado,$id_asignatura,$id_docente){
 		$sql = "call SP_LISTAR_COMBO_ESTUDIANTE('$id_asignatura','$id_grado','$id_docente')";
 		$arreglo = array();
@@ -106,6 +105,7 @@ class Modelo_Calificaciones{
 			$this->conexion->cerrar();
 		}
 	}	
+
 	function listar_combo_docentes_verificar($id){
 		$sql = "call SP_LISTAR_COMBO_DOCENTE_VERIFITY('$id')";
 		$arreglo = array();
@@ -117,6 +117,7 @@ class Modelo_Calificaciones{
 			$this->conexion->cerrar();
 		}
 	}	
+
 	function listar_combo_asignatura($id,$id_asignatura){
 		$sql = "call SP_LISTAR_COMBO_GRUPO('$id','$id_asignatura')";
 		$arreglo = array();
@@ -128,6 +129,7 @@ class Modelo_Calificaciones{
 			$this->conexion->cerrar();
 		}
 	}
+
 	function listar_combo_Materia($id){
 		$sql = "call SP_LISTAR_COMBO_MATERIA('$id')";
 		$arreglo = array();
@@ -140,7 +142,6 @@ class Modelo_Calificaciones{
 		}
 	}
 
-
 	function Modificar_Calificaciones($id_calificaciones,$nota_1,$nota_2,$nota_3,$nota_4){
 		$sql = "call SP_MODIFICAR_CALIFICACIONES('$id_calificaciones','$nota_1','$nota_2','$nota_3' , '$nota_4')";
 		if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -151,8 +152,5 @@ class Modelo_Calificaciones{
 		}
 
 	}
-
-
-
-
 }
+?>

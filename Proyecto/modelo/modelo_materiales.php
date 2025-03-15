@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Material{
@@ -51,27 +50,26 @@ class Modelo_Material{
 	public function registrar_nueva_carpeta_materiales($id_usuario, $titulo_carpeta) {
 		$sql = "call SP_NUEVA_CARPETA_MATERIAL('$id_usuario', '$titulo_carpeta')";
 		
-		// Ejecutar la consulta SQL
+		
 		if ($consulta = $this->conexion->conexion->query($sql)) {
-			$resultado = $consulta->fetch_assoc(); // Obtener el resultado de la consulta
-			return $resultado['result']; // Retorna el resultado del procedimiento almacenado
+			$resultado = $consulta->fetch_assoc(); 
+			return $resultado['result']; 
 		} else {
-			return 0; // Retorna 0 para indicar fallo
+			return 0; 
 		}
 	}
 
 	public function editar_carpeta_materiales($id_usuario, $titulo_carpeta, $id_carpeta){
 		$sql = "call SP_EDITAR_CARPETA_MATERIAL('$id_usuario', '$titulo_carpeta', '$id_carpeta')";
 		
-		// Ejecutar la consulta SQL
+
 		if ($consulta = $this->conexion->conexion->query($sql)) {
-			$resultado = $consulta->fetch_assoc(); // Obtener el resultado de la consulta
-			return $resultado['result']; // Retorna el resultado del procedimiento almacenado
+			$resultado = $consulta->fetch_assoc(); 
+			return $resultado['result']; 
 		} else {
-			return 0; // Retorna 0 para indicar fallo
+			return 0; 
 		}
 	}
-
 
 	function nuevo_material_archivo($titulo_material,$id_material,$ruta){
 		$sql = "call SP_RESGISTRAR_MATERIAL_ARCHIVO('$titulo_material','$id_material','$ruta')";
@@ -161,9 +159,6 @@ class Modelo_Material{
 		}
 	}	
 
-
-
-
 	function registrar_respuesta_chat($id_chat, $id_usuario, $comentario){
 		$sql = "call SP_REGISTRAR_RESPUESTA_CHAT('$id_chat', '$id_usuario', '$comentario')";
 		
@@ -174,7 +169,6 @@ class Modelo_Material{
 			return 0; // Retorna 0 para indicar fallo
 		}
 	}
-	
 	
 	public function registrar_nuevo_chat($id_usuario, $id_chat_nuevo) {
 		$sql = "CALL SP_REGISTRAR_NUEVO_CHAT('$id_usuario', '$id_chat_nuevo')";
@@ -187,7 +181,6 @@ class Modelo_Material{
 			return 0; // Retorna 0 para indicar fallo
 		}
 	}
-
 
 	public function modificar_chat_visto($id_chat_visto) {
 		$sql = "CALL SP_MODIFICAR_CHAT_VISTO('$id_chat_visto')";
@@ -225,8 +218,5 @@ class Modelo_Material{
 			$this->conexion->cerrar();
 		}
 	}	
-
-
-	
 }
 ?>

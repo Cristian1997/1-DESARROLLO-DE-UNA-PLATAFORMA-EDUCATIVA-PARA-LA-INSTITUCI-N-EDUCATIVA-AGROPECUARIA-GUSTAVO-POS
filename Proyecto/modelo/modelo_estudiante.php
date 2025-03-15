@@ -63,8 +63,5 @@
         $this->conexion->cerrar();
       }
     }
-
-
 }
-
-  
+?>

@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Trabajos{
@@ -21,6 +20,7 @@ class Modelo_Trabajos{
 			$this->conexion->cerrar();
 		}
 	}
+
 	function listar_Trabajos_entregados_estudiante($id_usuario,$id_grupo){
 		$sql = "call SP_LISTAR_TALLERES_ENTREGADOS_ESTUDIANTE('$id_usuario','$id_grupo')";
 		$arreglo = array();
@@ -44,6 +44,7 @@ class Modelo_Trabajos{
 			return 0;
 		}
 	}
+
 	function listar_combo_talleres_verificar($id,$id_grupo){
 		$sql = "call SP_LISTAR_COMBO_TALLER_VERIFITY('$id', '$id_grupo')";
 		$arreglo = array();
@@ -55,6 +56,5 @@ class Modelo_Trabajos{
 			$this->conexion->cerrar();
 		}
 	}
- 
-
 }
+?>

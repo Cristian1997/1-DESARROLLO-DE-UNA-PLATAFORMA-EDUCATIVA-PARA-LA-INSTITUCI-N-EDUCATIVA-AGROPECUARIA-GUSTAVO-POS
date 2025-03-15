@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
     class Modelo_Usuario{
@@ -166,6 +165,5 @@ function Modificar_Intento_Usuario($usuario){
 	}
 }
 
-
 }
-
+?>

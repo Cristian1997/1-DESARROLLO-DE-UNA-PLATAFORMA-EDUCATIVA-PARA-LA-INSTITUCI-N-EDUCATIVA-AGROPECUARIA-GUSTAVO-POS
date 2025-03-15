@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Chat{
@@ -21,8 +20,6 @@ class Modelo_Chat{
 			$this->conexion->cerrar();
 		}
 	}	
-
-	
 
 	function listar_chat_integrantes_estudiantes($id_usuario_es){
 		$sql = "call SP_LISTAR_CHAT_INTEGRANTES_ESTUDIANTES('$id_usuario_es')";
@@ -63,9 +60,6 @@ class Modelo_Chat{
 		}
 	}	
 
-
-
-
 	function registrar_respuesta_chat($id_chat, $id_usuario, $comentario){
 		$sql = "call SP_REGISTRAR_RESPUESTA_CHAT('$id_chat', '$id_usuario', '$comentario')";
 		
@@ -88,6 +82,7 @@ class Modelo_Chat{
 		}
 		
 	} 	
+
 	public function registrar_nuevo_chat($id_usuario, $id_chat_nuevo) {
 		$sql = "CALL SP_REGISTRAR_NUEVO_CHAT('$id_usuario', '$id_chat_nuevo')";
 		
@@ -99,7 +94,6 @@ class Modelo_Chat{
 			return 0; // Retorna 0 para indicar fallo
 		}
 	}
-
 
 	public function modificar_chat_visto($id_chat_visto) {
 		$sql = "CALL SP_MODIFICAR_CHAT_VISTO('$id_chat_visto')";
@@ -137,8 +131,5 @@ class Modelo_Chat{
 			$this->conexion->cerrar();
 		}
 	}	
-
-
-	
 }
 ?>

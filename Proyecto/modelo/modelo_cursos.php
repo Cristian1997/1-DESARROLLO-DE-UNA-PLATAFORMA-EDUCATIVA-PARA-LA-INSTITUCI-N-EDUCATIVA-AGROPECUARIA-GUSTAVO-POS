@@ -17,11 +17,7 @@
           return $arreglo;
         $this->conexion->cerrar();
         }
-        
       }
-
- 
-
   
     function Registrar_Asignatura($nombre){
       $sql = "call SP_REGISTRAR_ASIGNATURAS('$nombre')";
@@ -52,11 +48,6 @@
       }else{
         return 0;
       }
-     
     }
-
-
-
 }
-
-  
+?>

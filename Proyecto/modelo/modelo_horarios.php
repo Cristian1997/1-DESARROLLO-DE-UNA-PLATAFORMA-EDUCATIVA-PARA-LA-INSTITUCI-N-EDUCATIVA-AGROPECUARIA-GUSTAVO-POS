@@ -19,6 +19,7 @@
         }
         
       }
+
       function listar_horarios_docente(){
         $sql = "call SP_LISTAR_HORARIOS_DOCENTE";
         $arreglo = array();
@@ -31,7 +32,6 @@
         }
         
       }
-      
     
       function listar_horario_estudiante($id){
         $sql = "call SP_LISTAR_HORARIO_ESTUDIANTE('$id')";
@@ -43,7 +43,6 @@
           return $arreglo;
         $this->conexion->cerrar();
         }
-        
       }
 
       function  listar_horario_docente($id){
@@ -59,7 +58,6 @@
         
       }
     
-
       function listar_combo_cursos(){
         $sql = "call SP_LISTAR_COMBO_CURSOS()";
         $arreglo = array();
@@ -84,7 +82,6 @@
       }
   }
 
-    
     function listar_combo_docentes(){
       $sql = "call SP_COMBO_DOCENTES_HORARIOS()";
       $arreglo = array();
@@ -97,8 +94,6 @@
       }
   }
 
-  
- 
     public function Registrar_Horario(
       $grado,
       $bloque_1, $bloque_2, $bloque_3, $bloque_4, $bloque_5, $bloque_6,
@@ -162,7 +157,6 @@
         $this->conexion->cerrar();
     }
 }
-
 
   public function Editar_Horario(
     $id_horario,
@@ -228,10 +222,6 @@
     }
 }
 
-
-
 }
 
-
-
-  
+?>

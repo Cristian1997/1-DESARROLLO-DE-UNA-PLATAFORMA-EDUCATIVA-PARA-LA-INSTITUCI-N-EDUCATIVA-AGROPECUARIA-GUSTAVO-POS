@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Foro{
@@ -21,7 +20,6 @@ class Modelo_Foro{
 			$this->conexion->cerrar();
 		}
 	}	
-
 
 	function Listar_comentarios_foro($id_grupo, $id_foro){
 		$sql = "call SP_LISTAR_FORO_COMENTARIOS('$id_grupo','$id_foro')";
@@ -47,7 +45,6 @@ class Modelo_Foro{
 		}
 	}
 	
-
 	public function eliminarComentario($id_comentario_us) {
         $sql = "CALL SP_ELIMINAR_COMENTARIO_FORO($id_comentario_us)";
         if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -56,6 +53,7 @@ class Modelo_Foro{
             return 0; // Error
         }
     }
+
 	public function Eliminarcomentario_respuesta($id_comentario_us) {
         $sql = "CALL SP_ELIMINAR_COMENTARIO_FORO_RESPUESTA($id_comentario_us)";
         if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -74,8 +72,6 @@ class Modelo_Foro{
 		}
 	}
 
-	
-
 	public function Registrar_comentario_foro($id_foro, $id_grupo, $id_docente, $comentario) {
 		$sql = "CALL SP_REGISTRAR_COMENTARIO_FORO('$id_foro', '$id_grupo','$id_docente','$comentario')";
 		
@@ -86,7 +82,6 @@ class Modelo_Foro{
 		}
 	}
 	
-
 	function registrar_comentario_foro_respuesta($id_foro, $id_docente, $id_principal, $comentario, $id_responde_a){
 		$sql = "CALL SP_REGISTRAR_COMENTARIO_FORO_RESPUESTA('$id_foro','$id_docente','$id_principal','$comentario','$id_responde_a')";
 		if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -98,9 +93,6 @@ class Modelo_Foro{
 		}
 	}
 	
-	
-
-
 	function Editar_Foro($id_docente, $id_grupo, $id_foro, $tema_foro, $descripcion_foro){
 		$sql = "call SP_EDITAR_FORO('$id_docente','$id_grupo','$id_foro','$tema_foro','$descripcion_foro')";
 		if ($consulta = $this->conexion->conexion->query($sql)) {
@@ -109,7 +101,6 @@ class Modelo_Foro{
 			return 0;
 		}
 	}
-
 
 	function Editar_estado_foro(){
 		$sql = "call SP_MODIFICAR_ESTADO_FORO()";
@@ -151,7 +142,6 @@ class Modelo_Foro{
 		}
 	}
 	
-	
 	function TraerNotificacionesforoes($id_usuario){
 		$sql = "call SP_TRAER_NOTIFICACIONES_FORO_ESTUDIANTES('$id_usuario')";
 		$arreglo = array();
@@ -163,7 +153,6 @@ class Modelo_Foro{
 			$this->conexion->cerrar();
 		}
 	}	
-
 		
 	function TraerNotificacionesforodoc($id_usuario){
 		$sql = "call SP_TRAER_NOTIFICACIONES_FORO_DOCENTES('$id_usuario')";
@@ -176,6 +165,5 @@ class Modelo_Foro{
 			$this->conexion->cerrar();
 		}
 	}	
-	
 }
 ?>

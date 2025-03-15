@@ -1,4 +1,3 @@
-
 <?php
 /* MODELO CONEXION BASE DE DATOS*/	
 class Modelo_Asistencias{
@@ -59,6 +58,7 @@ class Modelo_Asistencias{
 			$this->conexion->cerrar();
 		}
 	}	
+	
 	function listar_combo_asignatura($id){
 		$sql = "call SP_LISTAR_COMBO_GRUPOS('$id')";
 		$arreglo = array();
@@ -70,6 +70,7 @@ class Modelo_Asistencias{
 			$this->conexion->cerrar();
 		}
 	}
+
 	function TraerDatos_fechas_Asistencias(){
 		$sql = "call SP_LISTAR_FECHA_ASISTENCIAS()";
 		$arreglo = array();
@@ -82,8 +83,6 @@ class Modelo_Asistencias{
 		}
 	}
 
-
-	
 	function Modificar_asistencia($id_asistencia, $dia, $asistencia, $id_grupo){
 		$sql = "CALL SP_MODIFICAR_ASISTENCIAS('$id_asistencia','$dia','$asistencia','$id_grupo')";
 		
@@ -104,7 +103,6 @@ class Modelo_Asistencias{
 			return 0; // Error
 		}
 	}
-	
 
 		function Asistencias_Modificar($dia,$asistencia){
 		$sql = "call SP_ACTUIALIZAR_ASISTENCIAS( '$dia','$asistencia')";
@@ -129,6 +127,7 @@ class Modelo_Asistencias{
 			$this->conexion->cerrar();
 		}
 	}
+
 	function TraerDatos_Asistencias_Espefificas($id_ES,$id_grupo){
 		$sql = "call SP_CONTADOR_ASISTENCIAS_ESPECIFICAS('$id_ES','$id_grupo')";
 		$arreglo = array();
@@ -140,6 +139,7 @@ class Modelo_Asistencias{
 			$this->conexion->cerrar();
 		}
 	}
+
 	function listar_combo_estudiantes($id_usuario_doc,$id_asignatura,$id_grado){
 		$sql = "call SP_LISTAR_COMBO_ESTUDIANTES('$id_asignatura' , '$id_grado' , '$id_usuario_doc')";
 		$arreglo = array();
@@ -153,3 +153,4 @@ class Modelo_Asistencias{
 	}	
 
 }
+?>

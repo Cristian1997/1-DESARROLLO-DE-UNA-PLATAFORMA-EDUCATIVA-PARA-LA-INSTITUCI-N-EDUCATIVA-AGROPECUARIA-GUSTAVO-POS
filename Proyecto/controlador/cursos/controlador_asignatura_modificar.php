@@ -6,3 +6,4 @@
  
     $consulta = $MD->Modificar_Asignatura($idasignatura,$nombre);
     echo $consulta;
+    ?>

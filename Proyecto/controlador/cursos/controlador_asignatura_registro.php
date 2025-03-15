@@ -5,3 +5,4 @@
  
     $consulta = $MD->Registrar_Asignatura($nombre);
     echo $consulta;
+    ?>

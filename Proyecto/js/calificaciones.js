@@ -1,3 +1,5 @@
+//-------------TABLA CALIFICACIONES-----------------------
+
 var tabla_calificaciones;
 function listar_calificaciones(id_grado, id_asignatura) {
   var id_usuario_doc = $("#txtidusuario").val();

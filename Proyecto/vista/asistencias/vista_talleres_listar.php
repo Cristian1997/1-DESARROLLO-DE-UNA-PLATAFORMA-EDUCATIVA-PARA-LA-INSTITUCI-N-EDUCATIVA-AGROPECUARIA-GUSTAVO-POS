@@ -38,7 +38,6 @@
                 <div class="col-lg-12 d-flex justify-content-center align-items-center">
                     <div class="small-box bg-aqua" style="width: 100%;">
                         <div class="inner text-center" style="height: 120px;">
-
                             <p>INASISTENCIAS</p>
                             <h3 id="txtregistroINA"></h3>
                         </div>
@@ -46,60 +45,74 @@
                             <i class="fa fa-calendar"></i>
                         </div>
                     </div>
-                </div><br><br><br><br><br><br><br>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
                 <div class="col-lg-4" hidden>
                     <label for="">Asignatura</label>
-                    <select class="js-example-basic-single" name="state" id="cbm_asignatura"
-                        style="width:100%;"></select><br><br>
+                    <select class="js-example-basic-single" name="state" id="cbm_asignatura" style="width:100%;"></select>
+                    <br>
+                    <br>
                 </div>
 
                 <div class="col-lg-4" hidden>
                     <label for="">Mis Grupos</label>
-                    <select class="js-example-basic-single" name="state" id="cbm_grado"
-                        style="width:100%;"></select><br><br>
+                    <select class="js-example-basic-single" name="state" id="cbm_grado" style="width:100%;"></select>
+                    <br>
+                    <br>
                 </div>
 
                 <div class="col-lg-6">
                     <label for="">Mis Grupos</label>
-                    <select class="js-example-basic-single" name="state" id="cbm_grupo"
-                        style="width:100%;"></select><br><br>
+                    <select class="js-example-basic-single" name="state" id="cbm_grupo" style="width:100%;"></select>
+                    <br>
+                    <br>
                 </div>
 
                 <div class="col-lg-3">
                     <label for="">Fecha de asistencia</label>
-                    <input type="date" name="state" id="cbm_estudiantes" style="width:100%;"><br><br>
+                    <input type="date" name="state" id="cbm_estudiantes" style="width:100%;">
+                    <br>
+                    <br>
                 </div>
 
                 <div class="col-lg-3">
-                    <label for="">&nbsp;</label><br>
-                    <button class="btn btn-primary" style="width:100%" onclick="datos()"><i class="fa fa-search"></i>
-                        Listar</button>
+                    <label for="">&nbsp;</label>
+                    <br>
+                    <button class="btn btn-primary" style="width:100%" onclick="datos()"><i class="fa fa-search"></i> Listar
+                    </button>
                 </div>
             </div>
 
             <style>
-            .d-flex {
-                display: flex;
-            }
-
-            .justify-content-center {
-                justify-content: center;
-            }
-
-            .align-items-center {
-                align-items: center;
-            }
-
-            .text-center {
-                text-align: center;
-            }
+                .d-flex {
+                    display: flex;
+                }
+    
+                .justify-content-center {
+                    justify-content: center;
+                }
+    
+                .align-items-center {
+                    align-items: center;
+                }
+    
+                .text-center {
+                    text-align: center;
+                }
             </style>
-            <br><br><br>
+            <br>
+            <br>
+            <br>
 
             <div class="col-lg-12 table-responsive">
-                <table id="tabla_detalles_asistencias" class="display responsive nowrap text-center"
-                    style="width:100% ">
+                <table id="tabla_detalles_asistencias" class="display responsive nowrap text-center" style="width:100% ">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -138,12 +151,8 @@
                 <h4 id="grado_modal_title" class="modal-title"><i class="fa fa-check-square-o"></i><b>&nbsp; Asistencias
                         del estudiante</b></h4>
             </div>
-
             <div class="modal-body">
                 <div class="row">
-
-
-
                     <!-- /.box-header -->
                     <div class="box-body">
                         <input type="text" id="id_ES" hidden>
@@ -158,11 +167,9 @@
                                             <i class="fa fa-calendar"></i>
                                         </div>
                                     </div>
-
-
                                 </div>
-
                             </div>
+                            
                             <div class="col-lg-12 d-flex justify-content-center align-items-center">
                                 <div class="small-box bg-aqua" style="width: 100%;">
                                     <div class="inner text-center" style="height: 120px;">
@@ -172,55 +179,53 @@
                                     <div class="icon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-
-
                                 </div>
                             </div>
+                            
                             <div class="col-lg-4" hidden>
-
                                 <label for="">Asignatura</label>
-                                <select class="js-example-basic-single" name="state" id="cbm_asignatura"
-                                    style="width:100%;">
-
-                                </select><br><br>
-
+                                <select class="js-example-basic-single" name="state" id="cbm_asignatura" style="width:100%;">
+                                </select>
+                                <br>
+                                <br>
                             </div>
+                            
                             <div class="col-lg-4" hidden>
                                 <label for="">Mis Grupos</label>
                                 <select class="js-example-basic-single" name="state" id="cbm_grado" style="width:100%;">
-
-                                </select><br><br>
-
+                                </select>
+                                <br>
+                                <br>
                             </div>
 
                             <div class="col-lg-6" hidden>
                                 <label for="">Mis Grupos</label>
-                                <select class="js-example-basic-single" name="state" id="cbm_grupo2"
-                                    style="width:100%;">
-
-                                </select><br><br>
-
+                                <select class="js-example-basic-single" name="state" id="cbm_grupo2" style="width:100%;">
+                                </select>
+                                <br>
+                                <br>
                             </div>
+                            
                             <div class="col-lg-3" hidden>
                                 <label for="">Estudiantes</label>
-                                <select class="js-example-basic-single" name="state" id="cbm_estudiantes2"
-                                    style="width:100%;">
-                                </select><br><br>
-
+                                <select class="js-example-basic-single" name="state" id="cbm_estudiantes2" style="width:100%;">
+                                </select>
+                                <br>
+                                <br>
                             </div>
+                            
                             <div class="col-lg-3" hidden>
-                                <label for="">&nbsp;</label><br>
-                                <button class="btn btn-primary" style="width:100%" onclick="datos()"><i
-                                        class="fa fa-search"></i> Listar</button>
-
+                                <label for="">&nbsp;</label>
+                                <br>
+                                <button class="btn btn-primary" style="width:100%" onclick="datos()"><i class="fa fa-search"></i> Listar</button>
                             </div>
-
-
-                        </div><br><br><br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
 
                         <div class="col-lg-12 table-responsive">
-                            <table id="tabla_detalles_asistencias_ES" class="display responsive nowrap text-center"
-                                style="width:100% ">
+                            <table id="tabla_detalles_asistencias_ES" class="display responsive nowrap text-center" style="width:100% ">
                                 <thead>
                                     <tr>
                                         <th>#</th>
@@ -241,69 +246,64 @@
                             </table>
                         </div>
                         <!-- /.box-body -->
-
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                            class="fa fa-close"><b>&nbsp;Cerrar</b></i></button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"><b>&nbsp;Cerrar</b></i></button>
                 </div>
             </div>
         </div>
     </div>
 
 
-
     <script src="../Plantilla/plugins/select2/select2.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-
-        listar_combo_asignatura();
-        listar_combo_grado();
-        listar_combo_estudiantes();
-        listar_detalles_asistencias();
-        TraerDatosContador();
-        TraerDatosContador1();
-        datos();
-        listar_combo_grupo();
-        listar_combo_estudiantes_2();
-        listar_combo_grupo_2();
-
-        $("#cbm_grupo").change(function() {
-            var id_grupo = $("#cbm_grupo").val();
-            listar_combo_grado(id_grupo);
-            listar_combo_asignatura(id_grupo);
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+    
+            listar_combo_asignatura();
+            listar_combo_grado();
             listar_combo_estudiantes();
-
+            listar_detalles_asistencias();
+            TraerDatosContador();
+            TraerDatosContador1();
+            datos();
+            listar_combo_grupo();
+            listar_combo_estudiantes_2();
+            listar_combo_grupo_2();
+    
+            $("#cbm_grupo").change(function() {
+                var id_grupo = $("#cbm_grupo").val();
+                listar_combo_grado(id_grupo);
+                listar_combo_asignatura(id_grupo);
+                listar_combo_estudiantes();
+            });
+            
+            $("#cbm_asignatura").change(function() {
+                var id_asignatura = $("#cbm_asignatura").val();
+                listar_calificaciones(id_asignatura, '');
+            });
+            
+            $("#cbm_grado").change(function() {
+                var id_grado = $("#cbm_grado").val();
+                listar_calificaciones(id_grado, '');
+            });
+            
+            $("#modal_registro_especialidad").on('shown.bs.modal', function() {
+                $("#txt_especialidad").focus();
+            })
         });
-        $("#cbm_asignatura").change(function() {
-            var id_asignatura = $("#cbm_asignatura").val();
-            listar_calificaciones(id_asignatura, '');
-
-        });
-        $("#cbm_grado").change(function() {
-            var id_grado = $("#cbm_grado").val();
-            listar_calificaciones(id_grado, '');
-
-        });
-        $("#modal_registro_especialidad").on('shown.bs.modal', function() {
-            $("#txt_especialidad").focus();
+    
+        $('.box').boxWidget({
+            animationSpeed: 500,
+            collapseTrigger: '[data-widget="collapse"]',
+            removeTrigger: '[data-widget="remove"]',
+            collapseIcon: 'fa-minus',
+            expandIcon: 'fa-plus',
+            removeIcon: 'fa-times'
         })
-    });
-
-
-
-    $('.box').boxWidget({
-        animationSpeed: 500,
-        collapseTrigger: '[data-widget="collapse"]',
-        removeTrigger: '[data-widget="remove"]',
-        collapseIcon: 'fa-minus',
-        expandIcon: 'fa-plus',
-        removeIcon: 'fa-times'
-    })
-    $(document).ready(function() {
-
-
-    })
+        $(document).ready(function() {
+    
+    
+        })
     </script>

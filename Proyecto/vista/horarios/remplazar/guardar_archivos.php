@@ -2,7 +2,7 @@
 $ruta = "../img/";
 
 if (isset($_FILES["archivo"]) && $_FILES["archivo"]["name"][0]) {
-    // Obtén el valor del menú desplegable
+
     $nombrePersonalizado = isset($_POST['nombrePersonalizado']) ? $_POST['nombrePersonalizado'] : "Horarios_page-0001";
 
     for ($i = 0; $i < count($_FILES["archivo"]["name"]); $i++) {

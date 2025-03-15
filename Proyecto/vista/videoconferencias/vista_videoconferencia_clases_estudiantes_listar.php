@@ -44,7 +44,6 @@
 
 
          </div><br><br><br>
-         <!-- /.tabla historia clinica -->
          <div class="col-lg-12 table-responsive ">
              <table id="tabla_videoconferencia_clases" class=" display  nowrap text-center" style="width:100%">
                 <thead>

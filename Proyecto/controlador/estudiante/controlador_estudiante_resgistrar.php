@@ -14,4 +14,4 @@ $usuario = htmlspecialchars($_POST['usu'],ENT_QUOTES,"UTF-8");
 $contra = password_hash($_POST['contra'],PASSWORD_DEFAULT,['cost'=>10]);
 $consulta = $ME->Registrar_Estudiantes($documento,$nombre,$apellido,$fecha,$telefono,$sexo,$email,$grado,$usuario,$contra);
 echo $consulta; 
-
+?> 

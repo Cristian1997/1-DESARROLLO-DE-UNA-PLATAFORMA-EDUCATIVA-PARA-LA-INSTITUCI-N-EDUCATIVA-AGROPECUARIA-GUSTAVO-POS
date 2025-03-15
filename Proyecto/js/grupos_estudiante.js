@@ -1,142 +1,131 @@
- var tabla_Grupo;
- function listar_grupo(id_grado,id_asignatura,id_usuario_doc) {
 
-   if (id_grado == null || id_asignatura == null) {
-    id_grado = 1;
-    id_asignatura = 1;
-}
-tabla_Grupo = $("#tabla_Grupo").DataTable({
-    "ordering": false,
-    "bLengthChange": true,
-    "searching": { "regex": false },
-    "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-    "pageLength": 10,
-    "destroy": true,
-    "async": false,
-    "processing": true,
-    "ajax": {
-        "url": "../controlador/grupos/controlador_grupos_listar.php",
-        type: 'POST',
-        data:{
-            id_usuario_doc:id_usuario_doc,
-            id_asignatura:id_asignatura,
-            id_grado:id_grado
-        }
-    },
+//-------------TABLA GRUPOS-----------------------
 
-    "columns": [
-        { "defaultContent": "" },
-        { "data": "Estudiante" },
-        { "data": "nombre" },
-        { "data": "aula" }
-  
-],
+var tabla_Grupo;
+function listar_grupo(id_grado, id_asignatura, id_usuario_doc) {
 
-    "language": idioma_espanol,
-    select: true
-});
-document.getElementById("tabla_Grupo_filter").style.display = "none";
-$('input.global_filter').on('keyup click', function () {
-    filterGlobal();
-});
-$('input.column_filter').on('keyup click', function () {
-    filterColumn($(this).parents('tr').attr('data-column'));
-});
-tabla_Grupo.on('draw.dt', function() {
-    var PageInfo = $('#tabla_Grupo').DataTable().page.info();
-    tabla_Grupo.column(0, {
-        page: 'current'
-    }).nodes().each(function(cell, i) {
-        cell.innerHTML = i + 1 + PageInfo.start;
+    if (id_grado == null || id_asignatura == null) {
+        id_grado = 1;
+        id_asignatura = 1;
+    }
+    tabla_Grupo = $("#tabla_Grupo").DataTable({
+        "ordering": false,
+        "bLengthChange": true,
+        "searching": { "regex": false },
+        "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "pageLength": 10,
+        "destroy": true,
+        "async": false,
+        "processing": true,
+        "ajax": {
+            "url": "../controlador/grupos/controlador_grupos_listar.php",
+            type: 'POST',
+            data: {
+                id_usuario_doc: id_usuario_doc,
+                id_asignatura: id_asignatura,
+                id_grado: id_grado
+            }
+        },
+
+        "columns": [
+            { "defaultContent": "" },
+            { "data": "Estudiante" },
+            { "data": "nombre" },
+            { "data": "aula" }
+
+        ],
+
+        "language": idioma_espanol,
+        select: true
     });
-});
+    document.getElementById("tabla_Grupo_filter").style.display = "none";
+    $('input.global_filter').on('keyup click', function () {
+        filterGlobal();
+    });
+    $('input.column_filter').on('keyup click', function () {
+        filterColumn($(this).parents('tr').attr('data-column'));
+    });
+    tabla_Grupo.on('draw.dt', function () {
+        var PageInfo = $('#tabla_Grupo').DataTable().page.info();
+        tabla_Grupo.column(0, {
+            page: 'current'
+        }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1 + PageInfo.start;
+        });
+    });
 
 }
 
+//-------------LISTAR COMBOS-----------------------
 
-
-
-function listar_combo_materia(){
+function listar_combo_materia() {
     var id = $("#txtidusuario").val();
 
     $.ajax({
-     url:"../controlador/calificaciones/controlador_combo_materia_listar.php",
-     type:"POST",
-     data:{
-         id:id 
-     }
- }).done(function(resp){
-     let data = JSON.parse(resp);
-     var cadena = "";
-     if (data.length > 0) {
+        url: "../controlador/calificaciones/controlador_combo_materia_listar.php",
+        type: "POST",
+        data: {
+            id: id
+        }
+    }).done(function (resp) {
+        let data = JSON.parse(resp);
+        var cadena = "";
+        if (data.length > 0) {
 
-         for (var i = 0 ; i < data.length; i++) {
-             cadena += "<option value='"+data[i][0]+"'>"+ "Asignatura:  " +data[i][1]+ "  --  "+"Profesor: " +  data[i][2] +" </option>" ;  
+            for (var i = 0; i < data.length; i++) {
+                cadena += "<option value='" + data[i][0] + "'>" + "Asignatura:  " + data[i][1] + "  --  " + "Profesor: " + data[i][2] + " </option>";
 
-         }
-         $("#cbm_grupo").html(cadena);
-         id  =  $("#cbm_grupo").val();
-         listar_combo_grado(id);
-         listar_combo_asignatura(id);
+            }
+            $("#cbm_grupo").html(cadena);
+            id = $("#cbm_grupo").val();
+            listar_combo_grado(id);
+            listar_combo_asignatura(id);
 
-         if (id.length != '') {
-            $("#cbm_grupo_listar").val(id).trigger("change");
+            if (id.length != '') {
+                $("#cbm_grupo_listar").val(id).trigger("change");
 
+            }
+
+        } else {
+            cadena += "<option value=''>NO SE ENCONTRARON REGISTROS</option>";
+            $("#cbm_grupo").html(cadena);
+        }
+    })
+}
+
+function listar_combo_verificar_docente() {
+    var id = $("#txtidusuario").val();
+    $.ajax({
+        url: "../controlador/calificaciones/controlador_combo_docente_verificar_listar.php",
+        type: "POST",
+        data: {
+            id: id
+        }
+    }).done(function (resp) {
+        let data = JSON.parse(resp);
+
+
+        if (data.length > 0) {
+            for (var i = 0; i < data.length; i++) {
+                $("#id_docente_verifity").val(data[i][0]).hide();
+
+            }
 
         }
-        
-
-
-    } else{
-     cadena += "<option value=''>NO SE ENCONTRARON REGISTROS</option>";
-     $("#cbm_grupo").html(cadena);
-
- }
-
-
-})
-}
-
-
-
-
-function listar_combo_verificar_docente(){
-   var id = $("#txtidusuario").val();
-   $.ajax({
-    url:"../controlador/calificaciones/controlador_combo_docente_verificar_listar.php",
-    type:"POST",
-    data:{
-        id:id
-    }
-}).done(function(resp){
-    let data = JSON.parse(resp);
-
-    
-    if (data.length > 0) {
-     for (var i = 0 ; i < data.length; i++) {
-       $("#id_docente_verifity").val(data[i][0]).hide();
-
-
-   }
-
-
-
-
-}
-})
+    })
 }
 
 function datos() {
     var id_grado = $("#cbm_grupo").val();
     var id_asignatura = $("#cbm_grupo").val();
     var id_usuario_doc = $("#id_docente_verifity").val();
-    listar_grupo(id_grado, id_asignatura,id_usuario_doc);
+    listar_grupo(id_grado, id_asignatura, id_usuario_doc);
 
     $("#lista_grupos").empty();
 
     var totalEstudiantes = 0;
 
-    tabla_Grupos.on('draw.dt', function() {
+    tabla_Grupos.on('draw.dt', function () {
         var data = tabla_Grupo.rows().data();
 
         if (data.length > 0) {
@@ -159,7 +148,7 @@ function datos() {
 
             $("#txt_contador").text(totalEstudiantes);
         }
-    }).draw(); 
+    }).draw();
 }
 
 

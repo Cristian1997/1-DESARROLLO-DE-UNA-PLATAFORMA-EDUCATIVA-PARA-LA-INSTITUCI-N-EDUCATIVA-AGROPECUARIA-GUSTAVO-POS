@@ -1,9 +1,9 @@
 
 //-----------------modales--------------------------------
 
-$(document).ready(function() {
-    $(document).on('click', '.nueva_carpeta', function() {
-       
+$(document).ready(function () {
+    $(document).on('click', '.nueva_carpeta', function () {
+
         // Mostrar el modal
         $("#modal_nueva_carpeta").modal({ backdrop: 'static', keyboard: false });
         $("#modal_nueva_carpeta").modal('show');
@@ -11,9 +11,9 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-    $(document).on('click', '.nuevo_material', function() {
-       
+$(document).ready(function () {
+    $(document).on('click', '.nuevo_material', function () {
+
         // Mostrar el modal
         $("#modal_nuevo_material").modal({ backdrop: 'static', keyboard: false });
         $("#modal_nuevo_material").modal('show');
@@ -32,7 +32,7 @@ function listar_combo_docentes() {
         data: {
             id: id
         }
-    }).done(function(resp) {
+    }).done(function (resp) {
         var data = JSON.parse(resp);
         var cadena = "";
         if (data.length > 0) {
@@ -41,7 +41,7 @@ function listar_combo_docentes() {
             }
             $("#cbm_docente").html(cadena);
 
-            $("#cbm_docente").change(function() {
+            $("#cbm_docente").change(function () {
                 $("#txtiddocente").val($(this).val());
                 listar_datos_docente_materiales_es();
                 listar_carpeta_materiales_es();
@@ -54,30 +54,29 @@ function listar_combo_docentes() {
     });
 }
 
-  $("#cbm_docente").change(function() {
+$("#cbm_docente").change(function () {
     $("#txtiddocente").val($(this).val());
     listar_datos_docente_materiales_es();
     listar_carpeta_materiales_es();
 });
+
 //-----------------registrar editar--------------------------------
 
-
-
-function crear_carpeta_material(){
+function crear_carpeta_material() {
     var titulo_carpeta = $("#txt_titulo_carpeta").val();
     var id_usuario = $("#txtidusuario").val();
 
-    if ( !titulo_carpeta) {
-        Swal.fire("Mensaje De Advertencia", "Carpeta sin nombre","warning");
+    if (!titulo_carpeta) {
+        Swal.fire("Mensaje De Advertencia", "Carpeta sin nombre", "warning");
         return;
     }
 
     $.ajax({
-        url:"../controlador/material/controlador_nueva_carpeta_material.php",
-        type:"POST",
-        data:{
-            titulo_carpeta:titulo_carpeta,
-            id_usuario:id_usuario
+        url: "../controlador/material/controlador_nueva_carpeta_material.php",
+        type: "POST",
+        data: {
+            titulo_carpeta: titulo_carpeta,
+            id_usuario: id_usuario
         }
     }).done(function (resp) {
         if (resp != "") {
@@ -85,7 +84,7 @@ function crear_carpeta_material(){
                 Swal.fire("Mensaje De Advertencia", "Ya creaste una carpeta con ese nombre. Por favor, seleccione otro nombre.", "warning");
                 return;
             }
-    
+
             if (resp == 1) {
                 Swal.fire("Mensaje De Confirmacion", "Nueva carpeta creada", "success")
                     .then((value) => {
@@ -95,29 +94,29 @@ function crear_carpeta_material(){
                 return;
             }
         }
-        
+
         Swal.fire("Mensaje De Error", "Lo sentimos, no se pudo completar el registro", "error");
     });
 }
 
 
-function editar_carpeta_material(){
+function editar_carpeta_material() {
     var id_carpeta = $("#id_editar_carpeta").val();
     var titulo_carpeta = $("#txt_titulo_carpeta_editar").val();
     var id_usuario = $("#txtidusuario").val();
 
-    if ( !titulo_carpeta) {
-        Swal.fire("Mensaje De Advertencia", "Carpeta sin nombre","warning");
-        return; 
+    if (!titulo_carpeta) {
+        Swal.fire("Mensaje De Advertencia", "Carpeta sin nombre", "warning");
+        return;
     }
 
     $.ajax({
-        url:"../controlador/material/controlador_editar_carpeta_material.php",
-        type:"POST",
-        data:{
-            id_carpeta:id_carpeta,
-            titulo_carpeta:titulo_carpeta,
-            id_usuario:id_usuario
+        url: "../controlador/material/controlador_editar_carpeta_material.php",
+        type: "POST",
+        data: {
+            id_carpeta: id_carpeta,
+            titulo_carpeta: titulo_carpeta,
+            id_usuario: id_usuario
         }
     }).done(function (resp) {
         if (resp != "") {
@@ -125,7 +124,7 @@ function editar_carpeta_material(){
                 Swal.fire("Mensaje De Advertencia", "Ya creaste una carpeta con ese nombre. Por favor, seleccione otro nombre.", "warning");
                 return;
             }
-    
+
             if (resp == 1) {
                 Swal.fire("Mensaje De Confirmacion", "Carpeta editada", "success")
                     .then((value) => {
@@ -135,11 +134,10 @@ function editar_carpeta_material(){
                 return;
             }
         }
-        
+
         Swal.fire("Mensaje De Error", "Lo sentimos, no se pudo completar el registro", "error");
     });
 }
-
 
 
 function enviar_archivo() {
@@ -148,10 +146,10 @@ function enviar_archivo() {
     var archivoInput = $("#txt_archivo_subir")[0];
     var archivo = archivoInput.files[0];
 
-  if (!titulo_material) {
-    Swal.fire("Mensaje De Advertencia", "Material de apoyo sin nombre", "warning");
-    return;
-}
+    if (!titulo_material) {
+        Swal.fire("Mensaje De Advertencia", "Material de apoyo sin nombre", "warning");
+        return;
+    }
 
     if (!archivo) {
         return Swal.fire("Mensaje De Advertencia", "Adjunte el archivo", "warning");
@@ -174,7 +172,7 @@ function enviar_archivo() {
     var nombrearchivo = nombreAleatorio + "_" + fecha.getDate() + "" + (fecha.getMonth() + 1) + "" + fecha.getFullYear() + "" + fecha.getMinutes() + "" + fecha.getMilliseconds() + "." + extension;
 
     // Reemplazar los caracteres no deseados con "_"
-    caracteresNoDeseados.forEach(function(caracter) {
+    caracteresNoDeseados.forEach(function (caracter) {
         nombrearchivo = nombrearchivo.replace(new RegExp("\\" + caracter, "g"), "_");
     });
 
@@ -190,7 +188,7 @@ function enviar_archivo() {
         data: formData,
         contentType: false,
         processData: false,
-        success: function(resp) {
+        success: function (resp) {
             if (resp > 0) {
                 Swal.fire("Mensaje de Confirmación", "Material agregado correctamente", "success").then((value) => {
                     $("#modal_nuevo_material").modal('hide');
@@ -206,16 +204,15 @@ function enviar_archivo() {
 }
 
 
-
 function editar_archivo() {
     var titulo_material = $("#txt_titulo_material_editar").val();
     var id_material = $("#id_editar_material").val();
-    var archivo_actual = $("#txt_archivo_material_actual").val(); 
+    var archivo_actual = $("#txt_archivo_material_actual").val();
 
     // Verificar si el título del material está vacío
     if (!titulo_material) {
         Swal.fire("Mensaje De Advertencia", "Material de apoyo sin nombre", "warning");
-        return; 
+        return;
     }
 
     // Obtener el archivo seleccionado si existe
@@ -240,7 +237,7 @@ function editar_archivo() {
         var nombrearchivo = nombreAleatorio + "_" + fecha.getDate() + "" + (fecha.getMonth() + 1) + "" + fecha.getFullYear() + "" + fecha.getMinutes() + "" + fecha.getMilliseconds() + "." + extension;
 
         // Reemplazar los caracteres no deseados con "_"
-        caracteresNoDeseados.forEach(function(caracter) {
+        caracteresNoDeseados.forEach(function (caracter) {
             nombrearchivo = nombrearchivo.replace(new RegExp("\\" + caracter, "g"), "_");
         });
     }
@@ -262,7 +259,7 @@ function editar_archivo() {
         data: formData,
         contentType: false,
         processData: false,
-        success: function(resp) {
+        success: function (resp) {
             if (resp > 0) {
                 Swal.fire("Mensaje de Confirmación", "Material editado correctamente", "success").then((value) => {
                     $("#modal_editar_material").modal('hide');
@@ -278,12 +275,11 @@ function editar_archivo() {
 }
 
 
-
 function eliminarMaterial(idMaterial, nombreArchivo) {
-  
-  $("#txt_archivo_material_actual_eliminar").val(nombreArchivo);
 
-    var archivo_actual = $("#txt_archivo_material_actual_eliminar").val(); 
+    $("#txt_archivo_material_actual_eliminar").val(nombreArchivo);
+
+    var archivo_actual = $("#txt_archivo_material_actual_eliminar").val();
     Swal.fire({
         title: '¿Estás seguro?',
         text: "Este material de apoyo será eliminado permanentemente.",
@@ -300,9 +296,9 @@ function eliminarMaterial(idMaterial, nombreArchivo) {
                 type: "POST",
                 data: {
                     id_material: idMaterial,
-                    archivo_actual: archivo_actual 
+                    archivo_actual: archivo_actual
                 }
-            }).done(function(resp) {
+            }).done(function (resp) {
                 if (resp == 1) {
                     Swal.fire("Mensaje de Confirmación", "Material eliminado correctamente", "success").then((value) => {
                         listar_materiales();
@@ -310,7 +306,7 @@ function eliminarMaterial(idMaterial, nombreArchivo) {
                 } else {
                     Swal.fire("Mensaje De Error", "No se pudo eliminar el material", "error");
                 }
-            }).fail(function() {
+            }).fail(function () {
                 Swal.fire("Mensaje De Error", "No se pudo completar la solicitud", "error");
             });
         }
@@ -333,7 +329,7 @@ function listar_datos_docente_materiales() {
         data: {
             id_usuario_es: id_usuario_es
         }
-    }).done(function(resp) {
+    }).done(function (resp) {
         let data = JSON.parse(resp);
 
         $("#lista_datos_docente_materiales").empty();
@@ -341,10 +337,10 @@ function listar_datos_docente_materiales() {
         if (data.data.length > 0) {
             var docenteActual = "";
 
-            data.data.forEach(function(item, index) {
+            data.data.forEach(function (item, index) {
                 if (item.docente !== docenteActual) {
                     docenteActual = item.docente;
-                    var elementoDocenteHTML = 
+                    var elementoDocenteHTML =
                         '<h3 class="widget-user-username">' + item.docente + '</h3>' +
                         '</div>';
 
@@ -352,19 +348,18 @@ function listar_datos_docente_materiales() {
                 }
 
                 var elementoMateriaHTML = '<div class="widget-user-desc-container">' +
-                                            '<h5 class="widget-user-desc">' + item.nombre + '</h5>' +
-                                          '</div>';
+                    '<h5 class="widget-user-desc">' + item.nombre + '</h5>' +
+                    '</div>';
 
                 $("#lista_datos_docente_materiales").append(elementoMateriaHTML);
                 if (item.foto) {
-                    var fotoURL = "../" + item.foto; 
+                    var fotoURL = "../" + item.foto;
                     $("#user-avatar").attr("src", fotoURL);
                 }
             });
         }
     });
 }
-
 
 function listar_carpeta_materiales() {
     var id_usuario_es = $("#txtidusuario").val();
@@ -375,13 +370,13 @@ function listar_carpeta_materiales() {
         data: {
             id_usuario_es: id_usuario_es
         }
-    }).done(function(resp) {
+    }).done(function (resp) {
         let data = JSON.parse(resp);
 
         $("#lista_carpeta_materiales").empty();
 
         if (data.data.length > 0) {
-            data.data.forEach(function(item, index) {
+            data.data.forEach(function (item, index) {
                 var elementoCarpetaHTML = '<li>' +
                     '<a style="display: flex; justify-content: space-between;">' +
                     '<span style="word-wrap: break-word; max-width: calc(100% - 100px); margin-right: 10px;">' + item.titulo + '</span>' +
@@ -398,63 +393,57 @@ function listar_carpeta_materiales() {
     });
 }
 
-
 function mostrarIdCarpeta(idCarpeta, tituloCarpeta) {
     $("#id_carpeta").val(idCarpeta);
-    
+
     $("#titulo_carpeta").text("Materiales de apoyo: " + tituloCarpeta);
 
     listar_materiales();
 
     var screenWidth = $(window).width();
-    if (screenWidth <= 576) { 
+    if (screenWidth <= 576) {
         $("#div_oculto").css("display", "block");
-    } else if (screenWidth <= 768) { 
+    } else if (screenWidth <= 768) {
         $("#div_oculto").css("display", "block");
-    } else if (screenWidth <= 992) { 
+    } else if (screenWidth <= 992) {
         $("#contenedor-columnas").animate({
             width: "41.20000%"
-        }, 500, function() {
+        }, 500, function () {
             $("#div_oculto").css("display", "block");
         });
     } else if (screenWidth <= 1200) {
         $("#contenedor-columnas").animate({
             width: "41.20000%"
-        }, 500, function() {
+        }, 500, function () {
             $("#div_oculto").css("display", "block");
         });
     } else {
         $("#contenedor-columnas").animate({
             width: "41.20000%"
-        }, 500, function() {
+        }, 500, function () {
             $("#div_oculto").css("display", "block");
         });
     }
 }
 
 
-
-
-
-
-$(".btn-box-tool").click(function() {
+$(".btn-box-tool").click(function () {
     $("#div_oculto").animate({
         height: 0
-    }, 500, function() {
-        $(this).css("display", "none"); 
+    }, 500, function () {
+        $(this).css("display", "none");
     });
 
     $("#contenedor-columnas").delay(500).animate({
-        width: "100%" 
+        width: "100%"
     }, 500);
 });
 
-
 function editarCarpeta(idCarpeta, tituloCarpeta) {
     $("#id_editar_carpeta").val(idCarpeta);
-    
+
     $("#txt_titulo_carpeta_editar").val(tituloCarpeta);
-    
+
     $("#modal_editar_carpeta").modal("show");
 }
 
@@ -472,29 +461,29 @@ function listar_materiales() {
         data: {
             id_materiales: id_materiales
         }
-    }).done(function(resp) {
+    }).done(function (resp) {
         let data = JSON.parse(resp);
 
         $("#lista_materiales").empty();
 
         if (data.hasOwnProperty('data') && data.data.length > 0) {
-            data.data.forEach(function(item, index) {
+            data.data.forEach(function (item, index) {
                 var filaMaterialHTML = '<tr>' +
-                '<td>' + item.titulo + '</td>' +
-                '<td><span class="label label-success">' + item.estado + '</span></td>' +
-                '<td><a href="../' + item.archivo + '" download="' + obtenerNombreArchivo(item.archivo) + '">Descargar material</a></td>' +
-                '<td>' +
-                '<button type="button" class="btn btn-primary btn-sm" onclick="editarMaterial(' + item.ID + ', \'' + item.titulo + '\', \'' + item.archivo + '\')"><i class="fa fa-edit"></i></button>&nbsp;' +
-                '<button type="button" class="btn btn-danger btn-sm" onclick="eliminarMaterial(' + item.ID + ', \'' + obtenerNombreArchivo(item.archivo) + '\')"><i class="fa fa-trash-o"></i></button>'
+                    '<td>' + item.titulo + '</td>' +
+                    '<td><span class="label label-success">' + item.estado + '</span></td>' +
+                    '<td><a href="../' + item.archivo + '" download="' + obtenerNombreArchivo(item.archivo) + '">Descargar material</a></td>' +
+                    '<td>' +
+                    '<button type="button" class="btn btn-primary btn-sm" onclick="editarMaterial(' + item.ID + ', \'' + item.titulo + '\', \'' + item.archivo + '\')"><i class="fa fa-edit"></i></button>&nbsp;' +
+                    '<button type="button" class="btn btn-danger btn-sm" onclick="eliminarMaterial(' + item.ID + ', \'' + obtenerNombreArchivo(item.archivo) + '\')"><i class="fa fa-trash-o"></i></button>'
                 '</td>' +
-                '</tr>';
-            
+                    '</tr>';
+
                 $("#lista_materiales").append(filaMaterialHTML);
             });
         } else {
             $("#lista_materiales").html('<tr><td colspan="4"><div class="alert alert-warning" style="margin-bottom: 0;">Carpeta vacía</div></td></tr>');
         }
-    }).fail(function() {
+    }).fail(function () {
         $("#lista_materiales").html('<tr><td colspan="4"><div class="alert alert-danger" style="margin-bottom: 0;">Error al cargar los datos</div></td></tr>');
     });
 }
@@ -506,7 +495,7 @@ function editarMaterial(idMaterial, tituloMaterial, archivoMaterial) {
 
     $("#id_editar_material").val(idMaterial);
     $("#txt_titulo_material_editar").val(tituloMaterial);
-    $("#txt_archivo_material_actual").val(nombreArchivo); 
+    $("#txt_archivo_material_actual").val(nombreArchivo);
     $("#archivo_material_actual").attr("data-archivo", archivoMaterial);
 
     $("#modal_editar_material").modal("show");
@@ -515,121 +504,117 @@ function editarMaterial(idMaterial, tituloMaterial, archivoMaterial) {
 
 // -----------------------------------------estudiantes----------------------------------
 
-$(document).ready(function() {
-    $("#btn_filtrar_material_docente").click(function() {
+$(document).ready(function () {
+    $("#btn_filtrar_material_docente").click(function () {
         listar_datos_docente_materiales_es();
         listar_carpeta_materiales_es();
     });
 
-function listar_datos_docente_materiales_es() {
-    var id_usuario_es = $("#cbm_docente").val();
+    function listar_datos_docente_materiales_es() {
+        var id_usuario_es = $("#cbm_docente").val();
 
-    $.ajax({
-        url: "../controlador/material/controlador_listar_datos_docente_materiales.php",
-        type: "POST",
-        data: {
-            id_usuario_es: id_usuario_es
-        }
-    }).done(function(resp) {
-        let data = JSON.parse(resp);
+        $.ajax({
+            url: "../controlador/material/controlador_listar_datos_docente_materiales.php",
+            type: "POST",
+            data: {
+                id_usuario_es: id_usuario_es
+            }
+        }).done(function (resp) {
+            let data = JSON.parse(resp);
 
-        $("#lista_datos_docente_materiales").empty();
+            $("#lista_datos_docente_materiales").empty();
 
-        if (data.data.length > 0) {
-            var docenteActual = "";
+            if (data.data.length > 0) {
+                var docenteActual = "";
 
-            data.data.forEach(function(item, index) {
-                if (item.docente !== docenteActual) {
-                    docenteActual = item.docente;
-                    var elementoDocenteHTML = 
-                        '<h3 class="widget-user-username">' + item.docente + '</h3>' +
+                data.data.forEach(function (item, index) {
+                    if (item.docente !== docenteActual) {
+                        docenteActual = item.docente;
+                        var elementoDocenteHTML =
+                            '<h3 class="widget-user-username">' + item.docente + '</h3>' +
+                            '</div>';
+
+                        $("#lista_datos_docente_materiales").append(elementoDocenteHTML);
+                    }
+
+                    var elementoMateriaHTML = '<div class="widget-user-desc-container">' +
+                        '<h5 class="widget-user-desc">' + item.nombre + '</h5>' +
                         '</div>';
 
-                    $("#lista_datos_docente_materiales").append(elementoDocenteHTML);
-                }
+                    $("#lista_datos_docente_materiales").append(elementoMateriaHTML);
+                    if (item.foto) {
+                        var fotoURL = "../" + item.foto;
+                        $("#user-avatar").attr("src", fotoURL);
+                    }
+                });
+            }
+        });
+    }
 
-                var elementoMateriaHTML = '<div class="widget-user-desc-container">' +
-                                            '<h5 class="widget-user-desc">' + item.nombre + '</h5>' +
-                                          '</div>';
+    function listar_carpeta_materiales_es() {
+        var id_usuario_es = $("#cbm_docente").val();
 
-                $("#lista_datos_docente_materiales").append(elementoMateriaHTML);
-                if (item.foto) {
-                    var fotoURL = "../" + item.foto; 
-                    $("#user-avatar").attr("src", fotoURL);
-                }
-            });
-        }
-    });
-}
+        $.ajax({
+            url: "../controlador/material/controlador_listar_carpeta_materiales.php",
+            type: "POST",
+            data: {
+                id_usuario_es: id_usuario_es
+            }
+        }).done(function (resp) {
+            let data = JSON.parse(resp);
 
+            $("#lista_carpeta_materiales").empty();
 
-function listar_carpeta_materiales_es() {
-    var id_usuario_es = $("#cbm_docente").val();
+            if (data.data.length > 0) {
+                data.data.forEach(function (item, index) {
+                    var elementoCarpetaHTML = '<li>' +
+                        '<a style="display: flex; justify-content: space-between;">' +
+                        '<span style="word-wrap: break-word; max-width: calc(100% - 100px); margin-right: 10px;">' + item.titulo + '</span>' +
+                        '<span>' +
+                        '<button class="btn btn-primary custom-btn" style="width: 100px; height: 23px; font-size: 12px; padding: 1px;" onclick="mostrarIdCarpetaES(' + item.ID + ', \'' + item.titulo + '\')">Ver Materiales</button>' +
+                        '</span>' +
+                        '</a>' +
+                        '</li>';
 
-    $.ajax({
-        url: "../controlador/material/controlador_listar_carpeta_materiales.php",
-        type: "POST",
-        data: {
-            id_usuario_es: id_usuario_es
-        }
-    }).done(function(resp) {
-        let data = JSON.parse(resp);
-
-        $("#lista_carpeta_materiales").empty();
-
-        if (data.data.length > 0) {
-            data.data.forEach(function(item, index) {
-                var elementoCarpetaHTML = '<li>' +
-                    '<a style="display: flex; justify-content: space-between;">' +
-                    '<span style="word-wrap: break-word; max-width: calc(100% - 100px); margin-right: 10px;">' + item.titulo + '</span>' +
-                    '<span>' +
-                    '<button class="btn btn-primary custom-btn" style="width: 100px; height: 23px; font-size: 12px; padding: 1px;" onclick="mostrarIdCarpetaES(' + item.ID + ', \'' + item.titulo + '\')">Ver Materiales</button>' +
-                    '</span>' +
-                    '</a>' +
-                    '</li>';
-
-                $("#lista_carpeta_materiales").append(elementoCarpetaHTML);
-            });
-        }
-    });
-}
+                    $("#lista_carpeta_materiales").append(elementoCarpetaHTML);
+                });
+            }
+        });
+    }
 });
-
 
 function mostrarIdCarpetaES(idCarpeta, tituloCarpeta) {
     $("#id_carpeta").val(idCarpeta);
-    
+
     $("#titulo_carpeta").text("Materiales de apoyo: " + tituloCarpeta);
 
     listar_materiales_es();
 
     var screenWidth = $(window).width();
-    if (screenWidth <= 576) { 
+    if (screenWidth <= 576) {
         $("#div_oculto").css("display", "block");
-    } else if (screenWidth <= 768) { 
+    } else if (screenWidth <= 768) {
         $("#div_oculto").css("display", "block");
-    } else if (screenWidth <= 992) { 
+    } else if (screenWidth <= 992) {
         $("#contenedor-columnas").animate({
             width: "41.20000%"
-        }, 500, function() {
+        }, 500, function () {
             $("#div_oculto").css("display", "block");
         });
-    } else if (screenWidth <= 1200) { 
+    } else if (screenWidth <= 1200) {
         $("#contenedor-columnas").animate({
             width: "41.20000%"
-        }, 500, function() {
+        }, 500, function () {
             $("#div_oculto").css("display", "block");
         });
     } else {
         $("#contenedor-columnas").animate({
             width: "41.20000%"
-        }, 500, function() {
+        }, 500, function () {
             $("#div_oculto").css("display", "block");
         });
     }
 }
-
-
 
 function listar_materiales_es() {
     var id_materiales = $("#id_carpeta").val();
@@ -640,38 +625,38 @@ function listar_materiales_es() {
         data: {
             id_materiales: id_materiales
         }
-    }).done(function(resp) {
+    }).done(function (resp) {
         let data = JSON.parse(resp);
 
         $("#lista_materiales").empty();
 
         if (data.hasOwnProperty('data') && data.data.length > 0) {
-            data.data.forEach(function(item, index) {
+            data.data.forEach(function (item, index) {
                 var filaMaterialHTML = '<tr>' +
-                '<td>' + item.titulo + '</td>' +
-                '<td><span class="label label-success">' + item.estado + '</span></td>' +
-                '<td><a href="../' + item.archivo + '" download="' + obtenerNombreArchivo(item.archivo) + '">Descargar material</a></td>' +
-                '</tr>';
-            
+                    '<td>' + item.titulo + '</td>' +
+                    '<td><span class="label label-success">' + item.estado + '</span></td>' +
+                    '<td><a href="../' + item.archivo + '" download="' + obtenerNombreArchivo(item.archivo) + '">Descargar material</a></td>' +
+                    '</tr>';
+
                 $("#lista_materiales").append(filaMaterialHTML);
             });
         } else {
             $("#lista_materiales").html('<tr><td colspan="4"><div class="alert alert-warning" style="margin-bottom: 0;">Carpeta vacía</div></td></tr>');
         }
-    }).fail(function() {
+    }).fail(function () {
         $("#lista_materiales").html('<tr><td colspan="4"><div class="alert alert-danger" style="margin-bottom: 0;">Error al cargar los datos</div></td></tr>');
     });
 }
-// -----------------------------------------Fecha limite foro----------------------------------
+// -----------------------------------------Fecha limite----------------------------------
 
 function TraerfechaM() {
     var data = "2023-11-23";
     const local = new Date();
-    const weekInMilliseconds = 7 * 24 * 60 * 60 * 1000; 
+    const weekInMilliseconds = 7 * 24 * 60 * 60 * 1000;
     var aWeekAfterData = new Date(data);
-    aWeekAfterData.setTime(aWeekAfterData.getTime() + weekInMilliseconds); 
+    aWeekAfterData.setTime(aWeekAfterData.getTime() + weekInMilliseconds);
 
-    if (local >= aWeekAfterData) { 
+    if (local >= aWeekAfterData) {
         actualizar_estado();
     }
 }
@@ -683,13 +668,8 @@ function actualizar_estado() {
     });
 }
 
-
-
-    function mostrarNuevaImagen() {
-        var userAvatarContainer = document.getElementById('user-avatar-container');
-        var userAvatar = document.getElementById('user-avatar');
-
-        
-        userAvatarContainer.style.display = 'block';
-    }
-
+function mostrarNuevaImagen() {
+    var userAvatarContainer = document.getElementById('user-avatar-container');
+    var userAvatar = document.getElementById('user-avatar');
+    userAvatarContainer.style.display = 'block';
+}

@@ -5,3 +5,4 @@
  
     $consulta = $MS->listar_combo_grupo_verifity($id_grupo);
     echo json_encode($consulta);
+    ?>

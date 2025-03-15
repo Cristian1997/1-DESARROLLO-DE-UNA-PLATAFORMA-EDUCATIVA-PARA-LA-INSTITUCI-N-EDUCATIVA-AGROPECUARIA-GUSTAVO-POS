@@ -5,3 +5,4 @@
 
     $consulta = $MS->listar_combo_calificaciones_estudiante($id_estudiante);
     echo json_encode($consulta);
+    ?>

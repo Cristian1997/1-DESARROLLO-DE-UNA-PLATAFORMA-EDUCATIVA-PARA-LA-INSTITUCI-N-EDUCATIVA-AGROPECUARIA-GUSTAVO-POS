@@ -6,3 +6,4 @@ $ID = htmlspecialchars($_POST['ID'],ENT_QUOTES,'UTF-8');
 $status = htmlspecialchars($_POST['estatus'],ENT_QUOTES,'UTF-8');
 $consulta = $MS->Modificar_Statatus_Grupo($ID,$status);
 echo $consulta;
+?>

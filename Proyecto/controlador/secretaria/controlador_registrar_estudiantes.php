@@ -8,3 +8,4 @@ $id_grupo = htmlspecialchars($_POST['id_grupo'],ENT_QUOTES,'UTF-8');
     $consulta = $MS->Registrar_Estudiantes($id_calificaciones,$id_docente,$id_grupo);
 
 echo $consulta;
+?>

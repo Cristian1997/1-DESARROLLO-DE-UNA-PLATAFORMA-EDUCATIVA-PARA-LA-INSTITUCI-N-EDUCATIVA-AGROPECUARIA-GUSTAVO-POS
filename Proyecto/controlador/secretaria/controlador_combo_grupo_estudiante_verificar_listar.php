@@ -5,3 +5,4 @@
 
     $consulta = $MS->listar_combo_grupo_estudiante_verificar($id_estudiante);
     echo json_encode($consulta);
+    ?>

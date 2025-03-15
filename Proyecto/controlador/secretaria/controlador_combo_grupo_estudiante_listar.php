@@ -7,3 +7,4 @@
 
     $consulta = $MS->listar_combo_grupo_estudiante($id_docente,$id_curso,$id_aula);
     echo json_encode($consulta);
+    ?>

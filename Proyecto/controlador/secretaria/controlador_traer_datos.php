@@ -3,3 +3,4 @@
     $MS = new Modelo_Secretaria();
     $consulta = $MS->listar_datos();
     echo json_encode($consulta);
+    ?>

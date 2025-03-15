@@ -1,3 +1,5 @@
+//-------------TABLA AISTENCIAS-----------------------
+
 var tabla_asistencias;
 function listar_asistencias(id_grado, id_asignatura) {
   var id_grupo = $("#cbm_grupo").val();

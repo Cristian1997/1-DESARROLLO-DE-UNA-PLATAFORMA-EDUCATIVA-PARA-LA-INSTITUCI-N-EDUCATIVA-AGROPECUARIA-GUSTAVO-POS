@@ -14,3 +14,4 @@ if ($consulta == 1) {
 }
 
 echo $consulta;
+?>

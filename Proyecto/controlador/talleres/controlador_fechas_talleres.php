@@ -6,4 +6,4 @@
 
     $consulta = $MA->TraerDatos_fechas_talleres();
     echo json_encode($consulta);
-?> 
+?>

@@ -10,3 +10,4 @@ $consulta = $MT->registrar_respuesta_estudiante_asunto($id_comentario,$respuesta
 
 
 echo $consulta;
+?>

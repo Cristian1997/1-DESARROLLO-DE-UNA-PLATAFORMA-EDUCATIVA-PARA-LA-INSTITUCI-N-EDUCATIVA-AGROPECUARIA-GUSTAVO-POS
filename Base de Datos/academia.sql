@@ -2917,7 +2917,7 @@ END$$
 
 DROP PROCEDURE IF EXISTS `SP_RESGISTRAR_ENTREGAR_TALLER`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_RESGISTRAR_ENTREGAR_TALLER` (IN `IDTLR` INT, IN `IDES` INT, IN `URL` VARCHAR(255), IN `NOTA` TEXT)   BEGIN
-    -- Insertar en la tabla detalles_talleres
+    
     INSERT INTO detalles_talleres(id_taller, id_estudiante, archivo, nota, fecha, estado_taller) VALUES (IDTLR, IDES, URL, NOTA, CURDATE(),'ENTREGADO');
 
    

@@ -4,11 +4,7 @@
 <link rel="stylesheet" href="../Plantilla/plugins/select2/select2.min.css">
 <div class="col-md-12">
     <div class="box box-warning box-solid">
-
-
-
         <div class="box-header with-border">
-
             <h3 class="box-title">DETALLES DE ASISTENCIAS</h3>
 
             <div class="box-tools pull-right">
@@ -19,9 +15,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-
             <input type="text" id="id_grupo" hidden>
-
             <div class="form-group">
                 <div class="col-lg-6" hidden>
                     <div class="small-box bg-aqua">
@@ -140,9 +134,6 @@
     </div>
 </div>
 
-
-
-
 <div class="modal fade" id="modal_ver_asistencia_estudiante" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -158,7 +149,6 @@
                         <input type="text" id="id_ES" hidden>
                         <div class="form-group">
                             <div class="col-lg-6" hidden>
-
                                 <div class="small-box bg-aqua">
                                     <div class="inner" style="height: 100px;">
                                         <h3 id="txtregistro"></h3>

@@ -46,7 +46,7 @@ if(!isset($_SESSION['S_IDUSUARIO'])){
     function iniciarVideoLlamada() {
         var fullRoomName = document.getElementById('roomNameInput').value;
 
-        // Extraer el nombre de sala después de 'https://meet.jit.si/'
+        // Extraer el nombre de sala despues de 'https://meet.jit.si/'
         var roomName = fullRoomName.replace('https://meet.jit.si/', '');
 
         if (roomName.length < 50) {
@@ -76,8 +76,8 @@ if(!isset($_SESSION['S_IDUSUARIO'])){
     'hangup', 'profile', 'chat', 'settings', 'raisehand',
     'videoquality', 'tileview', 'download', 'help'
   ],
-  SHOW_JITSI_WATERMARK: false, // Esto es opcional, si quieres quitar el logo de Jitsi
-  HIDE_KICK_BUTTON_FOR_GUESTS: true // Esto es opcional, si no quieres que los estudiantes puedan expulsar a otros participantes
+  SHOW_JITSI_WATERMARK: false, 
+  HIDE_KICK_BUTTON_FOR_GUESTS: true
 }
 
         };

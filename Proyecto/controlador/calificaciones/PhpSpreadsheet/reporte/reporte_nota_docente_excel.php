@@ -14,7 +14,7 @@ $data = json_decode($_POST['data'], true);
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
-// Establecer los estilos para las celdas
+// Estilos para las celdas
 $headerStyle = [
     'font' => [
         'bold' => true,
@@ -48,7 +48,7 @@ $dataStyle = [
     ],
 ];
 
-// Agregar información adicional
+// Información adicional
 $sheet->setCellValue('A1', 'Docente: ' . $data[0]['docente']);
 $sheet->setCellValue('A2', 'Nombre del Curso: ' . $data[0]['nombre']);
 $sheet->setCellValue('A3', 'Aula: ' . $data[0]['aula']);
@@ -56,12 +56,12 @@ $sheet->mergeCells('A1:G1');
 $sheet->mergeCells('A2:G2');
 $sheet->mergeCells('A3:G3');
 
-// Aplicar estilo a las celdas de información adicional
+// Estilo a las celdas de información adicional
 $sheet->getStyle('A1:G1')->applyFromArray($headerStyle);
 $sheet->getStyle('A2:G2')->applyFromArray($headerStyle);
 $sheet->getStyle('A3:G3')->applyFromArray($headerStyle);
 
-// Establecer encabezados de columna
+// Encabezados de columna
 $sheet->setCellValue('A5', 'Estudiante');
 $sheet->setCellValue('B5', 'Primera Nota');
 $sheet->setCellValue('C5', 'Segunda Nota');
@@ -70,10 +70,10 @@ $sheet->setCellValue('E5', 'Cuarta Nota');
 $sheet->setCellValue('F5', 'Nota Definitiva');
 $sheet->setCellValue('G5', 'Estado');
 
-// Aplicar estilo a los encabezados
+// Estilo a los encabezados
 $sheet->getStyle('A5:G5')->applyFromArray($headerStyle);
 
-// Ajustar el ancho de las columnas
+// Ancho de las columnas
 $sheet->getColumnDimension('A')->setWidth(25);
 $sheet->getColumnDimension('B')->setWidth(15);
 $sheet->getColumnDimension('C')->setWidth(15);

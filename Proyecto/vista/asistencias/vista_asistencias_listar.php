@@ -63,7 +63,6 @@
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-success" style="width:100%" onclick="cargar_contenido('contenido_principal','asistencias/vista_talleres_listar.php')"><i class="fa fa-check-square-o"></i>&nbsp;Detalles de Asistecias</button>
-
                 </div>
                 <div class="col-lg-2">
                     <label for="">&nbsp;</label>

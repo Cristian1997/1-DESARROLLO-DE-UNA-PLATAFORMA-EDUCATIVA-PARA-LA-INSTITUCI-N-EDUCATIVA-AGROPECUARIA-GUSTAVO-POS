@@ -29,8 +29,6 @@
                         <i class="ion ion-person-add" ></i>
                     </div>
                 </div>
-
-
             </div>
         </div>  
  <div class="small-box bg-aqua">
@@ -47,24 +45,23 @@
                 <div class="col-lg-6">
                     <label for="">Mis Grupos</label>
                     <select class="js-example-basic-single1" name="state" id="cbm_grupo" style="width:100%;">
-
                     </select>
                     <br>
                     <br>
-
                 </div>
 
                 <div class="col-lg-3">
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-primary" style="width:100%" onclick="listar()"><i class="fa fa-search"></i> Listar</button>
-
                 </div>
+                
                 <div class="col-lg-3">
                     <label for="">&nbsp;</label>
                     <br>
                     <button class="btn btn-success" style="width:100%" onclick="cargar_contenido('contenido_principal','talleres/vista_talleres_docentes_comentarios_listar_asunto.php')"><i class="fa fa-commenting-o"></i>&nbsp;Otros comentarios</button>
                 </div>
+                
             </div>
             <br>
             <br>

@@ -1390,11 +1390,7 @@ function soloLetras(e){
 <script src="../js/registro_clases.js?rev=<?php echo time();?>"></script>
 <script src="../js/notificaciones.js?rev=<?php echo time();?>"></script>
 
-
 <script>
-  
-
-
 
 </script>
 </body>

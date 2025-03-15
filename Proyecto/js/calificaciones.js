@@ -100,7 +100,6 @@ $("#tabla_calificaciones").on("click", ".editar", function () {
   if (tabla_calificaciones.row(this).child.isShown()) {
     var data = tabla_calificaciones.row(this).data();
   }
-
   $("#modal_editar").modal({ backdrop: "static", keyboard: false });
   $("#modal_editar").modal("show");
   $("#id_calificaciones").val(data.ID).hide();

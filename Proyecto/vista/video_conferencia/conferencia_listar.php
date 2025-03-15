@@ -3,30 +3,26 @@
     <div class="box box-warning box-solid">
         <div class="box-header with-border">
           <h3 class="box-title">VIDEO CONFERENCIAS</h3>
-
-
           <!-- /.box-tools -->
       </div>
       <!-- /.box-header -->
       <div class="box-body">
         <div class="form-group">
+            
             <div class="col-lg-6">
-  
                 <div class="input-group">
                     <input type="text" class="global_filter form-control" id="global_filter" placeholder="Ingresar dato a buscar">
                     <span class="input-group-addon"><i class="fa fa-search"></i></span>
             </div>
-            
+                
             </div>
             <div class="col-lg-3">
-
             <button class="btn btn-primary" style="width:100%"  onclick="window.open('video_conferencia/conferencias.php', '_blank');"><i class="fa fa-commenting-o"></i>&nbsp;  Iniciar video llamada</button>
        </div>
+            
             <div class="col-lg-3">
-       
                 <button class="btn btn-danger" style="width:100%" onclick="AbrirModalRegistro()"><i class="glyphicon glyphicon-plus"></i>Nuevo Registro</button>
                 </div>  
-
 </div><br><br>
 
    <div class="col-lg-12 table-responsive">
@@ -72,5 +68,4 @@
             $("#txt_usu").focus();  
         })
     } );
-
 </script>

@@ -1,7 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="horarios/css/horarios.css?v=<?php echo time(); ?>">
 
 </head>
@@ -23,15 +22,12 @@
     include ('horarios_actualizar.php');
     ?>
         </div>
-
         <div class="box-body">
             <div class="form-group">
-
                 <!--   Tarjetas-->
                 <div class="grid-title">
                     <h2>Grados 6°</h2>
                 </div>
-
 
                 <div class="container-card">
                     <div class="grid">
@@ -54,14 +50,8 @@
                                 <h3>Grado 6 B</h3>
                                 <a href="horarios\img\Horarios_page-0002.jpg?v" target="_blank" rel="noopener">Ver
                                     horario</a>
-
-
-
                             </div>
                         </div>
-
-
-
 
                         <div class="card">
                             <figure>
@@ -73,14 +63,9 @@
                                     horario</a>
                             </div>
                         </div>
-
-
-
                     </div>
 
                 </div>
-
-
 
                 <div class="grid-title">
                     <h2>Grados 7°</h2>
@@ -98,8 +83,7 @@
                                     horario</a>
                             </div>
                         </div>
-
-
+                        
                         <div class="card">
                             <figure>
                                 <img src="horarios/img/Horarios_page-0005.jpg?timestamp=<?php echo time(); ?>">
@@ -111,7 +95,6 @@
                             </div>
                         </div>
 
-
                         <div class="card">
                             <figure>
                                 <img src="horarios/img/Horarios_page-0006.jpg?timestamp=<?php echo time(); ?>">
@@ -122,17 +105,8 @@
                                     horario</a>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
-
                 </div>
-
-
 
                 <div class="grid-title">
                     <h2>Grados 8°</h2>
@@ -171,14 +145,8 @@
                                     horario</a>
                             </div>
                         </div>
-
-
-
                     </div>
-
                 </div>
-
-
 
                 <div class="grid-title">
                     <h2>Grados 9°</h2>
@@ -217,13 +185,9 @@
                                     horario</a>
                             </div>
                         </div>
-
-
-
                     </div>
 
                 </div>
-
 
                 <div class="grid-title">
                     <h2>Grados 10°</h2>
@@ -257,15 +221,15 @@
                             <figure>
                                 <img src="horarios\img\Horarios_page-0015.jpg?timestamp=<?php echo time(); ?>">
                             </figure>
+                            
                             <div class="contenido-card">
                                 <h3>Grado 10 C</h3>
                                 <a href="horarios\img\Horarios_page-0015.jpg?v" target="_blank" rel="noopener">Ver
                                     horario</a>
                             </div>
-
                         </div>
+                        
                     </div>
-
                 </div>
 
                 <div class="grid-title">
@@ -278,16 +242,19 @@
                             <figure>
                                 <img src="horarios/img/Horarios_page-0016.jpg?timestamp=<?php echo time(); ?>">
                             </figure>
+                            
                             <div class="contenido-card">
                                 <h3>Grado 11 A</h3>
                                 <a href="horarios\img\Horarios_page-0016.jpg?v" target="_blank" rel="noopener">Ver
                                     horario</a>
                             </div>
                         </div>
+                        
                         <div class="card">
                             <figure>
                                 <img src="horarios/img/Horarios_page-0017.jpg?timestamp=<?php echo time(); ?>">
                             </figure>
+                            
                             <div class="contenido-card">
                                 <h3>Grado 11 B</h3>
                                 <a href="horarios\img\Horarios_page-0017.jpg?v" target="_blank" rel="noopener">Ver
@@ -295,32 +262,26 @@
                             </div>
                         </div>
 
-
                         <div class="card">
                             <figure>
                                 <img src="horarios/img/Horarios_page-0018.jpg?timestamp=<?php echo time(); ?>">
                             </figure>
+                            
                             <div class="contenido-card">
                                 <h3>Grado 11 C</h3>
                                 <a href="horarios\img\Horarios_page-0018.jpg?v" target="_blank" rel="noopener">Ver
                                     horario</a>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
                 <!--Fin   Tarjetas-->
-
-
                 <div class="col-lg-12" style="text-align: center;">
-
                     </body>
-
                     </html>
+                    
                     <script>
-                    function cargar_contenido(contenedor, contenido) {
-                        $("#" + contenedor).load(contenido);
-                    }
+                        function cargar_contenido(contenedor, contenido) {
+                            $("#" + contenedor).load(contenido);
+                        }
                     </script>

@@ -12,3 +12,4 @@
     $sexo = htmlspecialchars($_POST['sexo'],ENT_QUOTES,'UTF-8');
     $consulta = $MD->Registrar_Docente($nombre,$apellido,$documento,$telefono,$fecha,$usu,$contra,$email,$sexo);
     echo $consulta;
+?> 

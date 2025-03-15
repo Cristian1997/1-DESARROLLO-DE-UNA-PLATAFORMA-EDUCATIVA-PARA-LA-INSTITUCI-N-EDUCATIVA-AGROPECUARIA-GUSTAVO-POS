@@ -164,6 +164,5 @@ function Modificar_Intento_Usuario($usuario){
 		$this->conexion->cerrar();
 	}
 }
-
 }
 ?>

@@ -72,5 +72,5 @@ Este proyecto fue desarrollado para la **Institución Educativa Agropecuaria Gus
 
 - **✅Uso Permitido:** Solo puede ser utilizado con fines educativos, investigación académica o mejora dentro de entornos de aprendizaje.  
 
-- **⚠Limitación de Responsabilidad:** El autor no se hace responsable de cualquier daño o perjuicio derivado del uso de este software fuera de los propósitos académicos para los cuales fue desarrollado.  
+- **⚠Limitación de Responsabilidad:** El autor no se hace responsable de cualquier daño o perjuicio derivado del uso de este software fuera de los propósitos académicos para los cuales fue desarrollado.
 
